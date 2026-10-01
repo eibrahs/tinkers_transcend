@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/nugget"
+  },
+  "cast_consumed": true,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+       "modid": "anvilcraft"
+    }
+  ],
+  "cooling_time": 10,
+  "fluid": {
+    "amount": 10,
+    "fluid": "tinkers_transcend:molten_enchanted_gold"
+  },
+  "result": {
+    "item": "anvilcraft:enchanted_gold_nugget"
+  }
+}

@@ -1,0 +1,18 @@
+{
+	"modifier.tinkers_transcend":{
+		"__upgrades__":null,
+		"mature":"#7783A6",
+
+		"__": null,
+		"ferocious": "#fc0000",
+		"eternal": "#d0c3f3",
+		"providence": "#fcc961",
+		"multiphase": "#da8ff7",
+		"fire_reforging": "#fca800",
+		"merciless": "#b2edf3",
+		"war_axe": "#933434",
+		"vision": "#f2be45",
+		"radiance": "#f2be45",
+		"carving": "#85210d"
+	}
+}

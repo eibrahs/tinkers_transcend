@@ -1,0 +1,9 @@
+{
+  "parent": "tconstruct:block/foundry/table_covered",
+  "textures": {
+    "particle": "tconstruct:block/foundry/casting/table_side",
+    "side":     "tinkers_transcend:block/time_warp_casting/table_side",
+    "bottom":   "tinkers_transcend:block/time_warp_casting/table_bottom",
+    "top":      "tinkers_transcend:block/time_warp_casting/table_plate"
+  }
+}

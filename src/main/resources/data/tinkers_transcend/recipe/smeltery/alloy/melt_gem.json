@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 1000,
+      "fluid": "anvilcraft:melt_gem"
+    },
+    {
+      "amount": 900,
+      "tag": "tconstruct:molten_emerald"
+    }
+  ],
+  "result": {
+    "amount": 2000,
+    "fluid": "anvilcraft:melt_gem"
+  },
+  "temperature": 934
+}

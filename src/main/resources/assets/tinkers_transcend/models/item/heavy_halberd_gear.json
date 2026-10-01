@@ -1,0 +1,11 @@
+{
+  "parent": "neoforge:item/default",
+  "loader": "tconstruct:material",
+  "offset": [
+    0,
+    0
+  ],
+  "textures": {
+    "texture": "tinkers_transcend:item/tool/parts/heavy_halberd_gear"
+  }
+}

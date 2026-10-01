@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 810,
+      "tag": "tconstruct:molten_netherite"
+    },
+    {
+      "amount": 1000,
+      "fluid": "anvilcraft:oil"
+    },
+    {
+      "amount": 750,
+      "fluid": "tinkers_transcend:molten_earth_core"
+    }
+  ],
+  "result": {
+    "amount": 540,
+    "fluid": "tinkers_transcend:molten_untempered_ember_metal"
+  },
+  "temperature": 1500
+}

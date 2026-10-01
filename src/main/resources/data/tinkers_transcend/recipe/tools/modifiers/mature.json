@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:experience_bottle"
+    },
+    {
+      "item": "minecraft:clock"
+    },
+    {
+      "item": "minecraft:bookshelf"
+    }
+  ],
+  "level": {
+    "max": 5
+  },
+  "result": "tinkers_transcend:mature",
+  "tools": {
+    "type": "neoforge:difference",
+    "base": {
+      "tag": "tconstruct:modifiable"
+    },
+    "subtracted": {
+      "tag": "tconstruct:modifiable/single_use"
+    }
+  },
+  "slots": {
+    "upgrades": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "anvilcraft:royal_steel_ingot"
+    },
+    "G": {
+      "item": "anvilcraft:tempering_glass"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "RGR",
+    "RRR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tinkers_transcend:royal_tank"
+  }
+}

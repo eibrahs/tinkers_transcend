@@ -1,0 +1,8 @@
+{
+  "parent": "tconstruct:block/template/controller_fluid",
+  "textures": {
+    "front": "tinkers_transcend:block/royal_foundry/controller/inactive",
+    "bricks": "tinkers_transcend:block/royal_foundry/royal/bricks",
+    "back": "tinkers_transcend:block/royal_foundry/io/back"
+  }
+}

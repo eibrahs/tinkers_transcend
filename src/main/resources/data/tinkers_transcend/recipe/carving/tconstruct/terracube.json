@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tconstruct"
+    }
+  ],
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "tconstruct:terracube"
+  },
+  "outputs": [
+    {
+      "chance": 0.6,
+      "damage": 0.5,
+      "item": {
+        "count": 1,
+        "item": "minecraft:clay_ball"
+      }
+    },
+    {
+      "chance": 0.35,
+      "damage": 1.0,
+      "item": {
+        "count": 2,
+        "item": "minecraft:clay_ball"
+      }
+    },
+    {
+      "chance": 0.05,
+      "damage": 9.0,
+      "item": "minecraft:clay"
+    }
+  ]
+}

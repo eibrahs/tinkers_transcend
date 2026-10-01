@@ -1,0 +1,24 @@
+{
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:turtle"
+  },
+  "outputs": [
+    {
+      "chance": 0.7,
+      "damage": 1.0,
+      "item": {
+        "count": 1,
+        "item": "minecraft:turtle_scute"
+      }
+    },
+    {
+      "chance": 0.3,
+      "damage": 1.5,
+      "item": {
+        "count": 2,
+        "item": "minecraft:turtle_scute"
+      }
+    }
+  ]
+}

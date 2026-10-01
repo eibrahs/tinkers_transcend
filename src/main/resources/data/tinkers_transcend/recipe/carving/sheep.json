@@ -1,0 +1,32 @@
+{
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:sheep"
+  },
+  "outputs": [
+    {
+      "chance": 0.3,
+      "damage": 5.0,
+      "item": {
+        "count": 1,
+        "item": "minecraft:mutton"
+      }
+    },
+    {
+      "chance": 0.4,
+      "damage": 5.0,
+      "item": {
+        "count": 2,
+        "item": "minecraft:mutton"
+      }
+    },
+    {
+      "chance": 0.3,
+      "damage": 5.0,
+      "item": {
+        "count": 3,
+        "item": "minecraft:mutton"
+      }
+    }
+  ]
+}

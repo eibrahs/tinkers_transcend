@@ -1,0 +1,34 @@
+{
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:zombie"
+  },
+  "outputs": [
+    {
+      "chance": 0.6,
+      "damage": 0.5,
+      "item": {
+        "count": 1,
+        "item": "minecraft:rotten_flesh"
+      }
+    },
+    {
+      "chance": 0.35,
+      "damage": 1.0,
+      "item": {
+        "count": 2,
+        "item": "minecraft:rotten_flesh"
+      }
+    },
+    {
+      "chance": 0.03,
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "chance": 0.02,
+      "damage": 20.0,
+      "item": "minecraft:zombie_head"
+    }
+  ],
+  "weakness": true
+}

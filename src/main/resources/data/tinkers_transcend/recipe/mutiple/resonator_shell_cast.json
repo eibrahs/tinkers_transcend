@@ -1,0 +1,24 @@
+{
+  "type": "anvilcraft:four_to_one_smithing",
+  "inputs": [
+    {
+      "items": "tconstruct:small_axe_head"
+    },
+    {
+      "items": "tconstruct:adze_head"
+    },
+    {
+      "items": "tconstruct:pick_head"
+    },
+    {
+      "items": "tconstruct:small_blade"
+    }
+  ],
+  "material": {
+    "items": "tconstruct:pattern"
+  },
+  "result": "tinkers_transcend:resonator_shell_cast",
+  "template": {
+    "items": "anvilcraft:four_to_one_smithing_template"
+  }
+}

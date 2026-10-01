@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tinkers_transcend:item/tool/cast/resonator_shell"
+  }
+}

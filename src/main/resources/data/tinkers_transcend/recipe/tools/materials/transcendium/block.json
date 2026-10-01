@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "anvilcraft:transcendium_block"
+  },
+  "leftover": {
+    "count": 1,
+    "item": "anvilcraft:transcendium_ingot"
+  },
+  "material": "tinkers_transcend:transcendium",
+  "needed": 1,
+  "value": 9
+}

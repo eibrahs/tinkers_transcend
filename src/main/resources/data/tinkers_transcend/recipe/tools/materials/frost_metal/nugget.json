@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "anvilcraft:frost_metal_nugget"
+  },
+  "material": "tinkers_transcend:frost_metal",
+  "needed": 9,
+  "value": 1
+}

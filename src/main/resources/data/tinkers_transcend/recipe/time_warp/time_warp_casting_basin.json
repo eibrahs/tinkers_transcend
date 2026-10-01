@@ -1,0 +1,16 @@
+{
+  "type": "anvilcraft:time_warp",
+  "ingredients": [
+    {
+      "items": "anvilcraft:cursed_gold_ingot"
+    },
+    {
+      "items": "tconstruct:scorched_basin"
+    }
+  ],
+  "results": [
+    {
+      "id": "tinkers_transcend:time_warp_casting_basin"
+    }
+  ]
+}

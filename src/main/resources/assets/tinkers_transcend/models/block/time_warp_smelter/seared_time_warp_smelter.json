@@ -1,0 +1,10 @@
+{
+  "parent": "anvilcraft:block/corrupted_beacon",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "base": "anvilcraft:block/corrupted_beacon_base",
+    "core": "anvilcraft:block/corrupted_beacon_core",
+    "particle": "anvilcraft:block/corrupted_beacon_glass",
+    "glass": "tinkers_transcend:block/time_warp_smelter/seared_time_warp_smelter"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:chicken"
+  },
+  "outputs": [
+    {
+      "chance": 0.3,
+      "item": {
+        "count": 1,
+        "item": "minecraft:feather"
+      }
+    },
+    {
+      "chance": 0.3,
+      "item": {
+        "count": 2,
+        "item": "minecraft:feather"
+      }
+    },
+    {
+      "chance": 0.3,
+      "item": {
+        "count": 3,
+        "item": "minecraft:feather"
+      }
+    },
+    {
+      "chance": 0.1,
+      "item": {
+        "count": 1,
+        "item": "minecraft:egg"
+      }
+    }
+  ],
+  "count": 6
+}

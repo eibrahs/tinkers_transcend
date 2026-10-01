@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_transcend:royal_steel_metal",
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_transcend:molten_royal_steel"
+  },
+  "temperature": 1000
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "ingredient": {
+    "item": "anvilcraft:earth_core_shard_block"
+  },
+  "result": {
+    "amount": 2250,
+    "fluid": "tinkers_transcend:molten_earth_core"
+  },
+  "temperature": 1500,
+  "time": 64
+}

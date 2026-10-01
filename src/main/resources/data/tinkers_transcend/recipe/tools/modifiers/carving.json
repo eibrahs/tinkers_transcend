@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:flint"
+    },
+    {
+      "tag": "c:concrete_powders"
+    },
+    {
+      "tag": "c:concrete_powders"
+    }
+  ],
+  "level": {
+    "max": 2
+  },
+  "result": "tinkers_transcend:carving",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": [
+    {
+      "tag": "farmersdelight:tools/knives"
+    }
+  ]
+}

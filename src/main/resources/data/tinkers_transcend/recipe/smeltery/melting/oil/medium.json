@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "ingredient": {
+    "tag": "anvilcraft:medium_meat"
+  },
+  "result": {
+    "amount": 16,
+    "fluid": "anvilcraft:oil"
+  },
+  "byproducts": [
+    {
+      "amount": 16,
+      "fluid": "tinkers_transcend:kerogen"
+    }
+  ],
+  "temperature": 60,
+  "time": 200000000
+}

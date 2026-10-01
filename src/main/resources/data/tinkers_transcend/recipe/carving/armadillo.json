@@ -1,0 +1,24 @@
+{
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:armadillo"
+  },
+  "outputs": [
+    {
+      "chance": 0.7,
+      "item": {
+        "count": 1,
+        "damage": 1.0,
+        "item": "minecraft:armadillo_scute"
+      }
+    },
+    {
+      "chance": 0.3,
+      "item": {
+        "count": 2,
+        "damage": 1.5,
+        "item": "minecraft:armadillo_scute"
+      }
+    }
+  ]
+}

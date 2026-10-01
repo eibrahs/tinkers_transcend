@@ -1,0 +1,24 @@
+{
+  "type": "anvilcraft:four_to_one_smithing",
+  "inputs": [
+    {
+      "items": "tconstruct:broad_axe_head"
+    },
+    {
+      "items": "tconstruct:hammer_head"
+    },
+    {
+      "items": "tconstruct:broad_blade"
+    },
+    {
+      "items": "tconstruct:small_blade"
+    }
+  ],
+  "material": {
+    "items": "tconstruct:pattern"
+  },
+  "result": "tinkers_transcend:heavy_halberd_gear_cast",
+  "template": {
+    "items": "anvilcraft:four_to_one_smithing_template"
+  }
+}

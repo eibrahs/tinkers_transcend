@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "tinkers_transcend:royal_steel_brick"
+  },
+  "cast_consumed": true,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "cooling_time": 320,
+  "fluid": {
+    "amount": 360,
+    "fluid": "tconstruct:molten_cobalt"
+  },
+  "result": {
+    "item": "tinkers_transcend:royal_foundry_controller"
+  }
+}

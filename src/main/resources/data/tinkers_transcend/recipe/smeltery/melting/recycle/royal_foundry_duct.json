@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "ingredient": {
+    "item": "tinkers_transcend:royal_foundry_duct"
+  },
+  "result": {
+    "amount": 180,
+    "fluid": "tconstruct:molten_gold"
+  },
+  "byproducts": [
+    {
+      "amount": 360,
+      "fluid": "tinkers_transcend:molten_royal_steel"
+    }
+  ],
+  "temperature": 1450,
+  "time": 180
+}

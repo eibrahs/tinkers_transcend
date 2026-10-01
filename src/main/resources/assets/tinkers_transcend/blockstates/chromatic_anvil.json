@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tinkers_transcend:block/chromatic_anvil",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "tinkers_transcend:block/chromatic_anvil",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "tinkers_transcend:block/chromatic_anvil"
+    },
+    "facing=west": {
+      "model": "tinkers_transcend:block/chromatic_anvil",
+      "y": 90
+    }
+  }
+}

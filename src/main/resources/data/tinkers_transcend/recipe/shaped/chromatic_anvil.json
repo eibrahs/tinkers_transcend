@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "anvilcraft:chromatic_stone"
+    },
+    "E": {"item": "minecraft:emerald"},
+    "R": {"item": "anvilcraft:ruby"},
+    "S": {"item": "anvilcraft:sapphire"},
+    "T": {"item": "anvilcraft:topaz"}
+  },
+  "pattern": [
+    "CCC",
+    " T ",
+    "RES"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tinkers_transcend:chromatic_anvil"
+  }
+}

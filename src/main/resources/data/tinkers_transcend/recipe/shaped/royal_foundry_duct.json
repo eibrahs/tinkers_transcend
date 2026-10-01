@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "anvilcraft:royal_steel_ingot"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "R R",
+    "G G",
+    "R R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tinkers_transcend:royal_foundry_duct"
+  }
+}

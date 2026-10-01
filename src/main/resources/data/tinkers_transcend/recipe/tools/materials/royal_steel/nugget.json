@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "anvilcraft:royal_steel_nugget"
+  },
+  "material": "tinkers_transcend:royal_steel",
+  "needed": 9,
+  "value": 1
+}

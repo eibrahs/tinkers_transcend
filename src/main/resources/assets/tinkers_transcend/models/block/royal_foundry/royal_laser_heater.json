@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tinkers_transcend:block/royal_foundry/royal_laser_heater"
+  }
+}

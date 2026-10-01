@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "anvilcraft:royal_steel_ingot"
+    },
+    "C": {
+      "item": "tconstruct:cobalt_ingot"
+    }
+  },
+  "pattern": [
+    "R R",
+    "C C",
+    "R R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tinkers_transcend:royal_foundry_drain"
+  }
+}

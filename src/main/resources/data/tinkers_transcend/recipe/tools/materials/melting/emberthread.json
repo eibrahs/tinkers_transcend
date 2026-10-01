@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_transcend:emberthread",
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_transcend:molten_ember_metal"
+  },
+  "temperature": 1000
+}

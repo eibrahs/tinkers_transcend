@@ -1,0 +1,40 @@
+{
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:cow"
+  },
+  "outputs": [
+    {
+      "chance": 0.2,
+      "damage": 2.0,
+      "item": {
+        "count": 1,
+        "item": "minecraft:leather"
+      }
+    },
+    {
+      "chance": 0.3,
+      "damage": 5.0,
+      "item": {
+        "count": 1,
+        "item": "minecraft:beef"
+      }
+    },
+    {
+      "chance": 0.3,
+      "damage": 5.0,
+      "item": {
+        "count": 2,
+        "item": "minecraft:beef"
+      }
+    },
+    {
+      "chance": 0.2,
+      "damage": 5.0,
+      "item": {
+        "count": 3,
+        "item": "minecraft:beef"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "neoforge:item/default-tool",
+  "textures": {
+    "head":   "tinkers_transcend:item/tool/hunting_knife/blade",
+    "handle": "tinkers_transcend:item/tool/hunting_knife/handle",
+    "binding":  "tinkers_transcend:item/tool/hunting_knife/binding"
+  },
+  "modifier_maps": ["tconstruct:cleaver"],
+  "modifier_roots": [ "tconstruct:item/tool/cleaver/modifiers/" ],
+  "parts": [
+    { "name": "handle", "index": 1 },
+    { "name": "head",   "index": 0 },
+    { "name": "binding",  "index": 2 }
+  ],
+  "overrides": [
+    {
+      "predicate": { "tconstruct:broken": 1 },
+      "model": "tconstruct:item/tool/dagger/broken"
+    }
+  ]
+}

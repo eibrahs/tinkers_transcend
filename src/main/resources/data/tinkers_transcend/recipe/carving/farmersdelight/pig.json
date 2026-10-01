@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:pig"
+  },
+  "outputs": [
+    {
+      "chance": 0.15,
+      "damage": 5.0,
+      "item": {
+        "count": 1,
+        "item": "minecraft:porkchop"
+      }
+    },
+    {
+      "chance": 0.2,
+      "damage": 5.0,
+      "item": {
+        "count": 2,
+        "item": "minecraft:porkchop"
+      }
+    },
+    {
+      "chance": 0.15,
+      "damage": 5.0,
+      "item": {
+        "count": 3,
+        "item": "minecraft:porkchop"
+      }
+    },
+    {
+      "chance": 0.25,
+      "damage": 3.0,
+      "item": {
+        "count": 1,
+        "item": "farmersdelight:ham"
+      }
+    },
+    {
+      "chance": 0.25,
+      "damage": 3.0,
+      "item": {
+        "count": 2,
+        "item": "farmersdelight:ham"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:part_builder",
+  "cost": 1,
+  "pattern": "tinkers_transcend:resonator_core",
+  "pattern_item": [
+    {
+      "item": "anvilcraft:resonator_core"
+    }
+  ],
+  "result": {
+    "item": "tinkers_transcend:resonator_core"
+  }
+}

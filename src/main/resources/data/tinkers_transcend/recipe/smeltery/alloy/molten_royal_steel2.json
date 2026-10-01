@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 100,
+      "tag": "tconstruct:molten_emerald"
+    },
+    {
+      "amount": 200,
+      "tag": "tconstruct:molten_amethyst"
+    },
+    {
+      "amount": 180,
+      "tag": "tconstruct:molten_iron"
+    },
+    {
+      "amount": 100,
+      "tag": "tconstruct:molten_diamond"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "fluid": "tinkers_transcend:molten_royal_steel"
+  },
+  "temperature": 1450
+}

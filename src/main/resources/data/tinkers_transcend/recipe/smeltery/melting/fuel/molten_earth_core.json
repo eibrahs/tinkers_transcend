@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting_fuel",
+  "duration": 400,
+  "fluid": {
+    "amount": 50,
+    "fluid": "tinkers_transcend:molten_earth_core"
+  },
+  "rate": 20,
+  "temperature": 1500
+}

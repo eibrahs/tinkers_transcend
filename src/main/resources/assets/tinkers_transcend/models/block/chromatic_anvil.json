@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/anvil",
+  "textures": {
+    "particle": "anvilcraft:block/chromatic_stone",
+    "body": "anvilcraft:block/chromatic_stone",
+    "top": "anvilcraft:block/chromatic_stone"
+  }
+}
+

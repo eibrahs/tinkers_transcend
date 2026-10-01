@@ -1,0 +1,10 @@
+{
+  "parent": "tconstruct:block/foundry/basin_covered",
+  "textures": {
+    "particle": "tconstruct:block/foundry/casting/basin_side",
+    "side":     "tinkers_transcend:block/time_warp_casting/basin_side",
+    "bottom":   "tinkers_transcend:block/time_warp_casting/basin_bottom",
+    "top":      "tinkers_transcend:block/time_warp_casting/basin_top",
+    "bars":     "tinkers_transcend:block/time_warp_casting/basin_bars"
+  }
+}

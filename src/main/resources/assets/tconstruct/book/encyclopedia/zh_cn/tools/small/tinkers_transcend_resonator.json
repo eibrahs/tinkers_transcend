@@ -1,0 +1,11 @@
+{
+  "tool": "tinkers_transcend:resonator",
+  "text": [
+    { "text": "共振器是一种高科技多功能工具，拥有特殊的共振挖掘能力，还可以在多种工具模式之间切换。" },
+    { "text": "可在共振、斧、锹、锄、镐五种模式之间切换", "paragraph": true }
+  ],
+  "properties": [
+    "+3 攻击力",
+    "1.2 攻击速度"
+  ]
+}

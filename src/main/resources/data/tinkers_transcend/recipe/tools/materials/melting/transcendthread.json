@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_transcend:transcendthread",
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_transcend:molten_transcendium"
+  },
+  "temperature": 1000
+}

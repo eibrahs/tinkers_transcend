@@ -1,0 +1,37 @@
+{
+  "icon": {
+    "item": "tinkers_transcend:resonator",
+    "nbt": "{Damage:0,tic_broken:0b,tic_display:1b,tic_materials:[\"tconstruct:ui_render#head\",\"tconstruct:ui_render#handle\",\"tconstruct:ui_render#extra\",\"tconstruct:ui_render#large\",\"tconstruct:ui_render#extra_large\"]}"
+  },
+  "input_slots": [
+    {
+      "filter": {
+        "item": "tinkers_transcend:resonator_shell"
+      },
+      "icon": "tinkers_transcend:resonator_shell",
+      "translation_key": "item.tinkers_transcend.resonator_shell",
+      "x": 31,
+      "y": 22
+    },
+    {
+      "filter": {
+        "item": "tconstruct:tool_handle"
+      },
+      "icon": "tconstruct:tool_handle",
+      "translation_key": "item.tconstruct.tool_handle",
+      "x": 22,
+      "y": 53
+    },
+    {
+      "filter": {
+        "item": "tinkers_transcend:resonator_core"
+      },
+      "icon": "tinkers_transcend:resonator_core",
+      "translation_key": "item.tinkers_transcend.resonator_core",
+      "x": 51,
+      "y": 34
+    }
+  ],
+  "sortIndex": 101,
+  "translation_key": "item.tinkers_transcend.resonator"
+}

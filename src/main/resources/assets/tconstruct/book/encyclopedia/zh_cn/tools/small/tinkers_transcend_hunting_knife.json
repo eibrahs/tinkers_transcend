@@ -1,0 +1,13 @@
+{
+  "tool": "tinkers_transcend:hunting_knife",
+  "text": [
+    { "text": "猎刀是一种专门用于剥取生物素材的工具。" },
+    { "text": "同时也是一把轻便的武器……或一把菜刀", "paragraph": true }
+  ],
+  "properties": [
+    "+0.5 攻击力",
+    "2.0 攻击速度",
+    "可当作菜刀",
+    "可剥取更多毛皮和肉"
+  ]
+}

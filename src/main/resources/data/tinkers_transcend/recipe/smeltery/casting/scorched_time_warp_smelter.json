@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "anvilcraft:corrupted_beacon"
+  },
+  "cast_consumed": true,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "cooling_time": 400,
+  "fluid": {
+    "amount": 1000,
+    "fluid": "tconstruct:scorched_stone"
+  },
+  "result": {
+    "item": "tinkers_transcend:scorched_time_warp_smelter"
+  }
+}

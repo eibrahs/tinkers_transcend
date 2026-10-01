@@ -1,0 +1,16 @@
+{
+  "modifier_id": "tinkers_transcend:multiphase",
+  "text": [
+    {
+      "text": "拥有此升级的物品按下[切换相位]按键可以切换附魔和强化空间。"
+    },
+    {
+      "text": "每级增加1个相位空间。无论该强化的等级有多高，最多也只能拥有4个相位空间。"
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "最高3级",
+    "无需槽位"
+  ]
+}

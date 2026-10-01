@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_transcend:enchanted_gold",
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_transcend:molten_enchanted_gold"
+  },
+  "temperature": 950
+}

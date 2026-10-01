@@ -1,0 +1,54 @@
+{
+  "color": "FFae500c",
+  "fallbacks": [
+    "metal_contrast",
+    "contrast",
+    "slime_metal",
+    "metal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:head",
+      "tconstruct:handle",
+      "tconstruct:repair_kit",
+      "tconstruct:limb",
+      "tconstruct:grip",
+      "tconstruct:armor_plating",
+      "tconstruct:plating_shield",
+      "tconstruct:maille"
+    ],
+    "transformer": {
+      "type": "tconstruct:grey_to_sprite",
+        "palette": [
+          {
+            "path": "tinkers_transcend:generator/ember",
+            "grey": 0
+          },
+          {
+            "path": "tinkers_transcend:generator/ember",
+            "grey": 63
+          },
+          {
+            "path": "tinkers_transcend:generator/ember",
+            "grey": 102
+          },
+          {
+            "path": "tinkers_transcend:generator/ember",
+            "grey": 140
+          },
+          {
+            "path": "tinkers_transcend:generator/ember",
+            "grey": 178
+          },
+          {
+            "path": "tinkers_transcend:generator/ember",
+            "grey": 216
+          },
+          {
+            "path": "tinkers_transcend:generator/ember",
+            "grey": 255
+          }
+        ]
+    }
+  }
+}

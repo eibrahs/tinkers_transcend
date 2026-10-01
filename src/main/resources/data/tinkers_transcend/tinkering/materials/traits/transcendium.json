@@ -1,0 +1,38 @@
+{
+    "default": [
+      {
+        "level": 1,
+        "name": "tinkers_transcend:ferocious"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_transcend:eternal"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_transcend:providence"
+      }
+    ],
+    "perStat": {
+      "tconstruct:binding": [
+        {
+          "level": 1,
+          "name": "tinkers_transcend:eternal"
+        },
+        {
+          "level": 1,
+          "name": "tinkers_transcend:multiphase"
+        }
+      ],
+      "tconstruct:maille": [
+        {
+          "level": 1,
+          "name": "tinkers_transcend:eternal"
+        },
+        {
+          "level": 1,
+          "name": "tinkers_transcend:multiphase"
+        }
+      ]
+    }
+ }

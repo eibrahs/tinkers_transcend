@@ -1,0 +1,22 @@
+{
+  "modifier_id": "tinkers_transcend:carving",
+  "text": [
+    {
+      "text": "猎刀专用升级，可提升肉类与皮革的掉落数量。右键可从特定生物身上剥取素材。"
+    },
+    {
+      "text": "与部分敌对生物战斗时，需将其生命值削减至10%以下才可进行剥取。",
+      "paragraph": true
+    },
+    {
+      "text": "升级可获得额外剥取次数，战斗中更容易剥取(削弱阈值+10%)。",
+      "paragraph": true
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "仅限猎刀",
+    "最高2级",
+    "每级需要1个升级槽"
+  ]
+}

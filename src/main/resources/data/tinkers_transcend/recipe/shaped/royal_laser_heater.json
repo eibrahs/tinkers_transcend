@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "anvilcraft:royal_steel_block"
+    },
+    "L": {
+      "item": "anvilcraft:laser_receiver"
+    },
+    "H": {
+      "item": "anvilcraft:heater"
+    }
+  },
+  "pattern": [
+    "L",
+    "R",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tinkers_transcend:royal_laser_heater"
+  }
+}

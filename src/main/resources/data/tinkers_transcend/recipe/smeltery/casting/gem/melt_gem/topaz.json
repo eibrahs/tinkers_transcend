@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "cooling_time": 48000,
+  "cast": {
+    "item": "anvilcraft:topaz"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "amount": 1000,
+    "fluid": "anvilcraft:melt_gem"
+  },
+  "result": {
+    "item": "anvilcraft:topaz_block"
+  }
+}

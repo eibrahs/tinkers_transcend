@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:part_builder",
+  "cost": 1,
+  "pattern": "tinkers_transcend:heavy_halberd_core",
+  "pattern_item": [
+    {
+      "item": "anvilcraft:heavy_halberd_core"
+    }
+  ],
+  "result": {
+    "item": "tinkers_transcend:heavy_halberd_core"
+  }
+}

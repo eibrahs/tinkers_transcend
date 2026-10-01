@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:table_casting_material",
+  "cast": {
+    "item": "tinkers_transcend:resonator_shell_cast"
+  },
+  "cast_consumed": false,
+  "item_cost": 8,
+  "result": "tinkers_transcend:resonator_shell"
+}

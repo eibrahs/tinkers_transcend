@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "anvilcraft:ember_metal_nugget"
+  },
+  "material": "tinkers_transcend:ember_metal",
+  "needed": 9,
+  "value": 1
+}

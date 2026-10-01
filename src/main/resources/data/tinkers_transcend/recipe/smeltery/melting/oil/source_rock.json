@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "ingredient": {
+    "item": "tinkers_transcend:source_rock"
+  },
+  "result": {
+    "amount": 1000,
+    "fluid": "anvilcraft:oil"
+  },
+  "temperature": 60,
+  "time": 200000000
+}

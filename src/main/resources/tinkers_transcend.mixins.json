@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.eibrahs.tinkerstranscend.mixin",
+  "mixins": [
+    "ApplyBonusCountMixin",
+    "DamageEntityMixin",
+    "EnchantedCountIncreaseFunctionMixin",
+    "FireReforgingUtilMixin",
+    "ModifiableItemMixin",
+    "BaseLaserBlockEntityMixin"
+  ],
+  "client": [],
+  "server": [],
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

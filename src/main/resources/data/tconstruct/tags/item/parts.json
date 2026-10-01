@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_transcend:resonator_core",
+    "tinkers_transcend:resonator_shell",
+    "tinkers_transcend:heavy_halberd_core",
+    "tinkers_transcend:heavy_halberd_gear"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "tconstruct:block/template/basin",
+  "textures": {
+    "top":    "tinkers_transcend:block/time_warp_casting/basin_top_bars",
+    "side":   "tinkers_transcend:block/time_warp_casting/basin_side",
+    "bottom": "tinkers_transcend:block/time_warp_casting/basin_bottom"
+  }
+}

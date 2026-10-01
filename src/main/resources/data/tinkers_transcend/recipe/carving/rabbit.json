@@ -1,0 +1,64 @@
+{
+  "type": "tinkers_transcend:carving",
+  "entity": {
+    "type": "minecraft:rabbit"
+  },
+  "outputs": [
+    {
+      "chance": 0.1,
+      "damage": 0.5,
+      "item": {
+        "count": 1,
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    {
+      "chance": 0.1,
+      "damage": 0.5,
+      "item": {
+        "count": 2,
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    {
+      "chance": 0.2,
+      "damage": 1.0,
+      "item": {
+        "count": 1,
+        "item": "minecraft:rabbit"
+      }
+    },
+    {
+      "chance": 0.2,
+      "damage": 1.0,
+      "item": {
+        "count": 2,
+        "item": "minecraft:rabbit"
+      }
+    },
+    {
+      "chance": 0.1,
+      "damage": 1.0,
+      "item": {
+        "count": 3,
+        "item": "minecraft:rabbit"
+      }
+    },
+    {
+      "chance": 0.15,
+      "damage": 0.5,
+      "item": {
+        "count": 1,
+        "item": "minecraft:rabbit_hide"
+      }
+    },
+    {
+      "chance": 0.15,
+      "damage": 0.5,
+      "item": {
+        "count": 2,
+        "item": "minecraft:rabbit_hide"
+      }
+    }
+  ]
+}

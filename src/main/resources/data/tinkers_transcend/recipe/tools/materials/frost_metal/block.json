@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "anvilcraft:frost_metal_block"
+  },
+  "leftover": {
+    "count": 1,
+    "item": "anvilcraft:frost_metal_ingot"
+  },
+  "material": "tinkers_transcend:frost_metal",
+  "needed": 1,
+  "value": 9
+}

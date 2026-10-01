@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 270,
+      "fluid": "tinkers_transcend:molten_royal_steel"
+    },
+    {
+      "amount": 1000,
+      "tag": "tinkers_transcend:powdered_snow"
+    },
+    {
+      "amount": 90,
+      "tag": "tinkers_transcend:molten_titanium"
+    }
+  ],
+  "result": {
+    "amount": 360,
+    "fluid": "tinkers_transcend:molten_untempered_frost_metal"
+  },
+  "temperature": 1
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "anvilcraft"
+    }
+  ],
+  "ingredient": {
+    "item": "minecraft:snow_block"
+  },
+  "result": {
+    "amount": 250,
+    "fluid": "minecraft:powder_snow"
+  },
+  "temperature": 3,
+  "time": 20
+}

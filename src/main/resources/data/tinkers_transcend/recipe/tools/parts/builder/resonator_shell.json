@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:part_builder",
+  "cost": 8,
+  "pattern": "tinkers_transcend:resonator_shell",
+  "pattern_item": [
+    {
+      "item": "anvilcraft:four_to_one_smithing_template"
+    },
+    {
+      "item": "tinkers_transcend:resonator_shell_cast"
+    }
+  ],
+  "result": {
+    "item": "tinkers_transcend:resonator_shell"
+  }
+}

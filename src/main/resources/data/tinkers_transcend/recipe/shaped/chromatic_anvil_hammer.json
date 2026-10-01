@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "anvilcraft:chromatic_stone"
+    },
+    "A": {
+      "item": "tinkers_transcend:chromatic_anvil"
+    },
+    "T": {"item": "minecraft:lightning_rod"}
+  },
+  "pattern": [
+    " A ",
+    " T ",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "tinkers_transcend:chromatic_anvil_hammer"
+  }
+}

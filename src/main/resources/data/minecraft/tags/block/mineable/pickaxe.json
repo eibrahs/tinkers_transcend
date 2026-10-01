@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_transcend:chromatic_anvil",
+    "tinkers_transcend:seared_time_warp_smelter",
+    "tinkers_transcend:scorched_time_warp_smelter",
+    "tinkers_transcend:time_warp_casting_table",
+    "tinkers_transcend:time_warp_casting_basin",
+    "#tinkers_transcend:royal_foundry",
+    "tinkers_transcend:royal_foundry_controller"
+  ]
+}

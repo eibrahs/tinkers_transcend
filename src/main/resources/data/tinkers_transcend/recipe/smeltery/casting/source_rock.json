@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 200000000,
+  "fluid": {
+    "amount": 1000,
+    "fluid": "tinkers_transcend:kerogen"
+  },
+  "result": {
+    "item": "tinkers_transcend:source_rock"
+  }
+}

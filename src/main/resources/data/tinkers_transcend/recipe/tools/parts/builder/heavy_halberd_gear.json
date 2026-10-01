@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:part_builder",
+  "cost": 8,
+  "pattern": "tinkers_transcend:heavy_halberd_gear",
+  "pattern_item": [
+    {
+      "item": "anvilcraft:four_to_one_smithing_template"
+    },
+    {
+      "item": "tinkers_transcend:heavy_halberd_gear_cast"
+    }
+  ],
+  "result": {
+    "item": "tinkers_transcend:heavy_halberd_gear"
+  }
+}

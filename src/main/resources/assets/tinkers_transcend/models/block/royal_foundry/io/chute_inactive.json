@@ -1,0 +1,9 @@
+{
+  "parent": "tconstruct:block/template/chute",
+  "textures": {
+    "top": "tinkers_transcend:block/royal_foundry/io/chute_top_inactive",
+    "back": "tinkers_transcend:block/royal_foundry/io/back",
+    "bricks": "tinkers_transcend:block/royal_foundry/royal/bricks",
+    "side": "tinkers_transcend:block/royal_foundry/io/chute_side_inactive"
+  }
+}
