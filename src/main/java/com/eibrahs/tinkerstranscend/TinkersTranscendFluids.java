@@ -31,39 +31,33 @@ public class TinkersTranscendFluids {
     public static final List<FluidRegister> RegisterList = new ArrayList<>();
 
     public static FluidRegister MOLTEN_TRANSCENDIUM = new FluidRegister("molten_transcendium")
-            .color(0xFF27223D).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(5);
+            .color(0xFF27223D).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(5);
     public static FluidRegister MOLTEN_ROYAL_STEEL = new FluidRegister("molten_royal_steel")
-            .color(0xFF586967).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFF586967).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_EMBER_METAL = new FluidRegister("molten_ember_metal")
-            .color(0xFF291518).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFF291518).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_FROST_METAL = new FluidRegister("molten_frost_metal")
-            .color(0xFF7889a2).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFF7889a2).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_UNTEMPERED_EMBER_METAL = new FluidRegister("molten_untempered_ember_metal")
-            .color(0xFF955847).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFF955847).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_UNTEMPERED_FROST_METAL = new FluidRegister("molten_untempered_frost_metal")
-            .color(0xFFc1dcde).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFFc1dcde).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_EARTH_CORE = new FluidRegister("molten_earth_core")
-            .color(0xFF6a1f06).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFF6a1f06).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_CURSED_GOLD = new FluidRegister("molten_cursed_gold")
-            .color(0xFFaf5e1e).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFFaf5e1e).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_ENCHANTED_GOLD = new FluidRegister("molten_enchanted_gold")
-            .color(0xFFffd669).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFFffd669).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister MOLTEN_TITANIUM = new FluidRegister("molten_titanium")
-            .color(0xFF929ea9).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+            .color(0xFF929ea9).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     public static FluidRegister KEROGEN = new FluidRegister("kerogen")
-            .color(0xFFa89e65).init()
-            .slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
-
+            .color(0xFFa89e65).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+    public static FluidRegister RESENTMENT = new FluidRegister("resentment")
+            .color(0xFF1c1c1c).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(80).noBucket();
+    public static FluidRegister FOX_SOUL = new FluidRegister("fox_soul")
+            .color(0xFF78bed7).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40).noBucket();
+    public static FluidRegister MOLTEN_RESENTFUL_STEEL = new FluidRegister("molten_resentful_steel")
+            .color(0xFF4e5365).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
     static{
         RegisterList.forEach(FluidRegister::register);
     }
@@ -77,6 +71,7 @@ public class TinkersTranscendFluids {
         private Supplier<BucketItem> BUCKET;
         private BaseFlowingFluid.Properties PROPERTIES;
         private int color;
+        private boolean hasBucket = true;
         public FluidRegister (String name){
             this.name = name;
         }
@@ -136,12 +131,16 @@ public class TinkersTranscendFluids {
             this.color = color;
             return this;
         }
-        public void register( ){
+        public FluidRegister noBucket(){
+            this.hasBucket = false;
+            return this;
+        }
+        public void register(){
             SOURCE = FLUIDS.register(name,() -> new BaseFlowingFluid.Source(PROPERTIES));
             FLOWING = FLUIDS.register(name+"_flowing",()->new BaseFlowingFluid.Flowing(PROPERTIES));
             BLOCK = TinkersTranscend.BLOCKS.register(name, () -> new LiquidBlock(SOURCE.get(), BlockBehaviour.Properties.of().mapColor(MapColor.WATER)      // 材质颜色
                     .strength(100.0F).noCollission().replaceable().liquid()));
-            BUCKET = TinkersTranscend.ITEMS.register(name+"_bucket", () -> new BucketItem(SOURCE.get(), new Item.Properties().stacksTo(1)));
+            if (hasBucket) BUCKET = TinkersTranscend.ITEMS.register(name+"_bucket", () -> new BucketItem(SOURCE.get(), new Item.Properties().stacksTo(1)));
 
         }
         private static class RegisterFluidType extends FluidType{

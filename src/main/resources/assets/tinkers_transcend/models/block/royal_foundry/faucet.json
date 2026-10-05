@@ -1,0 +1,6 @@
+{
+  "parent": "tconstruct:block/template/faucet",
+  "textures": {
+    "tex": "anvilcraft:block/smooth_royal_steel_block"
+  }
+}

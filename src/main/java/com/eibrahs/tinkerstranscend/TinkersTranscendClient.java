@@ -3,12 +3,16 @@ package com.eibrahs.tinkerstranscend;
 import com.eibrahs.tinkerstranscend.block.entity.TimeWarpCastingBlockEntity;
 import com.eibrahs.tinkerstranscend.block.entity.TinkersTranscendBlockEntities;
 import com.eibrahs.tinkerstranscend.block.menu.TinkersTranscendMenus;
+import com.eibrahs.tinkerstranscend.client.gui.MagicShieldLayer;
 import com.eibrahs.tinkerstranscend.client.model.ToolElementsModel;
 import com.eibrahs.tinkerstranscend.client.particle.TinkersTranscendParticles;
 import com.eibrahs.tinkerstranscend.client.renderer.ThrownModifiableHeavyHalberdRenderer;
 import com.eibrahs.tinkerstranscend.client.screen.ChromaticAnvilScreen;
 import com.eibrahs.tinkerstranscend.client.screen.RoyalFoundryScreen;
+import com.eibrahs.tinkerstranscend.entity.TinkersTranscendEntities;
+import com.eibrahs.tinkerstranscend.entity.projectile.FoxSoulArrowEntity;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -16,12 +20,10 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.ModelEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import slimeknights.tconstruct.smeltery.client.render.HeatingStructureBlockEntityRenderer;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
@@ -64,9 +66,26 @@ public class TinkersTranscendClient {
         );
         TimeWarpCastingBlockEntity.registerRenderers(event);
         event.registerBlockEntityRenderer(TinkersTranscendBlockEntities.ROYAL_FOUNDRY.get(), HeatingStructureBlockEntityRenderer::new);
+        event.registerEntityRenderer(
+                TinkersTranscendEntities.FOX_SOUL_ARROW.get(),
+    ctx -> new ArrowRenderer<>(ctx) {
+            @Override
+            public ResourceLocation getTextureLocation(FoxSoulArrowEntity foxSoulArrowEntity) {
+                return ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID,"textures/entity/projectiles/fox_soul_arrow.png");
+        }
+    });
+
     }
     @SubscribeEvent
     public static void onRegisterParticleProviders(RegisterParticleProvidersEvent event) {
         TinkersTranscendParticles.register(event);
+    }
+    @SubscribeEvent
+    public static void onRegisterGuiLayers(RegisterGuiLayersEvent event) {
+        event.registerAbove(
+                VanillaGuiLayers.PLAYER_HEALTH,
+                ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "magic_shield"),
+                new MagicShieldLayer()
+        );
     }
 }

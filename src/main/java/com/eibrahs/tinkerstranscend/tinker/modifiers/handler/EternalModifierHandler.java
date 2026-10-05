@@ -1,6 +1,7 @@
-package com.eibrahs.tinkerstranscend.tinker.modifiers;
+package com.eibrahs.tinkerstranscend.tinker.modifiers.handler;
 
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.TinkersTranscendModifiers;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;

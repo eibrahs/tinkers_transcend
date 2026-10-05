@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_transcend:fox_soul_steel_ingot",
+  "ingredients": [
+    {
+      "item": "tinkers_transcend:fox_soul_steel_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tinkers_transcend:fox_soul_steel_ingot"
+  }
+}

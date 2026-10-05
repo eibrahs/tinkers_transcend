@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:entity_melting",
+  "damage": 2,
+  "entity": {
+    "type": "minecraft:fox"
+  },
+  "result": {
+    "amount": 25,
+    "fluid": "tinkers_transcend:resentment"
+  }
+}

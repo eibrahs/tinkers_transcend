@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_transcend:resentful_steel_ingot",
+  "ingredients": [
+    {
+      "item": "tinkers_transcend:resentful_steel_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tinkers_transcend:resentful_steel_ingot"
+  }
+}

@@ -23,6 +23,8 @@ public class TinkersTranscendModifiers {
             MODIFIERS.register("mature", MatureModifier::new);
     public static final StaticModifier<FerociousModifier> FEROCIOUS_MODIFIER =
             MODIFIERS.register("ferocious", FerociousModifier::new);
+    public static final StaticModifier<DisdainModifier> DISDAIN_MODIFIER =
+            MODIFIERS.register("disdain", DisdainModifier::new);
     public static final StaticModifier<EternalModifier> ETERNAL_MODIFIER =
             MODIFIERS.register("eternal", EternalModifier::new);
     public static final StaticModifier<ProvidenceModifier> PROVIDENCE_MODIFIER =
@@ -41,6 +43,10 @@ public class TinkersTranscendModifiers {
             MODIFIERS.register("radiance",RadianceModifier::new);
     public static final StaticModifier<CarvingModifier> CARVING_MODIFIER =
             MODIFIERS.register("carving", CarvingModifier::new);
+    public static final StaticModifier<ResentModifier> RESENT_MODIFIER =
+            MODIFIERS.register("resent",ResentModifier::new);
+    public static final StaticModifier<FoxSoulModifier> FOX_SOUL_MODIFIER =
+            MODIFIERS.register("fox_soul",FoxSoulModifier::new);
     public static void register(IEventBus modEventBus) {
         MODIFIERS.register(modEventBus);
     }
@@ -50,7 +56,7 @@ public class TinkersTranscendModifiers {
 
     public static boolean hasModifier(ItemStack item, ModifierId modifierId){
         if (!ToolStack.isInitialized(item)) return false;
-        return ToolStack.from(item).getModifier(modifierId)!=ModifierEntry.EMPTY;
+        return ToolStack.copyFrom(item).getModifier(modifierId)!=ModifierEntry.EMPTY;
 
     }
     public static boolean hasUpgrade(ItemStack item, ModifierId modifierId){

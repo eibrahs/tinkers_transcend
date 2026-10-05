@@ -1,7 +1,7 @@
 package com.eibrahs.tinkerstranscend.network;
 
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
-import com.eibrahs.tinkerstranscend.tinker.modifiers.MultiphaseModifierHandler;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.handler.MultiphaseModifierHandler;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;

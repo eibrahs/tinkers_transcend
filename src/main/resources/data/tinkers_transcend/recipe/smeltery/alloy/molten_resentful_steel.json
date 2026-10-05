@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 50,
+      "fluid": "tinkers_transcend:resentment"
+    },
+    {
+      "amount": 90,
+      "tag": "tinkers_transcend:resentable"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_transcend:molten_resentful_steel"
+  },
+  "temperature": 2000
+}

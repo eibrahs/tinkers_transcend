@@ -1,8 +1,9 @@
-package com.eibrahs.tinkerstranscend.tinker.modifiers;
+package com.eibrahs.tinkerstranscend.tinker.modifiers.handler;
 
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import com.eibrahs.tinkerstranscend.TinkersTranscendClient;
 import com.eibrahs.tinkerstranscend.TinkersTranscendComponents;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.MultiphaseModifier;
 import dev.dubhe.anvilcraft.client.init.ModKeyMappings;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.KeyMapping;

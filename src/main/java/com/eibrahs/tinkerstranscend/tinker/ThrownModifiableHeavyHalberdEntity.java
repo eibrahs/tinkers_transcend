@@ -1,6 +1,6 @@
 package com.eibrahs.tinkerstranscend.tinker;
 
-import com.eibrahs.tinkerstranscend.TinkersTranscendEntities;
+import com.eibrahs.tinkerstranscend.entity.TinkersTranscendEntities;
 import dev.dubhe.anvilcraft.entity.ThrownHeavyHalberdEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;

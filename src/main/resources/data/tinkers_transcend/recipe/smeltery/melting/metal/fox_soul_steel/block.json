@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+   "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+       "modid": "anvilcraft"
+    }
+  ],
+  "ingredient": {
+    "item": "tinkers_transcend:fox_soul_steel_block"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_transcend:molten_resentful_steel"
+  },
+  "byproducts": [
+    {
+      "amount": 2250,
+      "fluid": "tinkers_transcend:fox_soul"
+    }
+  ],
+  "temperature": 2000,
+  "time": 324
+}

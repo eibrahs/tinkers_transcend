@@ -181,9 +181,9 @@ public class RoyalFoundryScreen extends MultiModuleScreen<RoyalFoundryContainerM
         }
 
         // 绘制箭头图标（用文字或纹理）
-        int offset = BUTTON_SIZE/2;
-        graphics.drawCenteredString(font, "→", MAIN_TO_ALLOY_X+offset, MAIN_TO_ALLOY_Y+2, 0xFFFFFF);
-        graphics.drawCenteredString(font, "←", ALLOY_TO_MAIN_X+offset, ALLOY_TO_MAIN_Y+2, 0xFFFFFF);
+        int offset = BUTTON_SIZE/2+1;
+        graphics.drawCenteredString(font, "→", MAIN_TO_ALLOY_X+offset, MAIN_TO_ALLOY_Y+1, 0xFFFFFF);
+        graphics.drawCenteredString(font, "←", ALLOY_TO_MAIN_X+offset, ALLOY_TO_MAIN_Y+1, 0xFFFFFF);
 
         graphics.drawString(font, I18n.get("gui.tconstruct.royal_foundry.alloyTank"),60,6,0,false);
         graphics.drawString(font,I18n.get("gui.tconstruct.royal_foundry.temperature"),116,6,0,false);

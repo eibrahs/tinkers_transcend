@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "tinkers_transcend:resentful_steel_block"
+  },
+  "cast_consumed": true,
+  "cooling_time": 100000000,
+  "fluid": {
+    "amount": 2250,
+    "fluid": "tinkers_transcend:fox_soul"
+  },
+  "result": {
+    "item": "tinkers_transcend:fox_soul_steel_block"
+  }
+}

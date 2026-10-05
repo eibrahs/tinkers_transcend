@@ -5,8 +5,10 @@ import com.eibrahs.tinkerstranscend.block.component.LaserHeaterBlock;
 import com.eibrahs.tinkerstranscend.block.component.RoyalBlock;
 import com.eibrahs.tinkerstranscend.block.controller.*;
 import com.eibrahs.tinkerstranscend.item.BlockTooltipItem;
+import dev.dubhe.anvilcraft.block.fluid.DrainBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -17,6 +19,8 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import slimeknights.tconstruct.smeltery.block.ChannelBlock;
+import slimeknights.tconstruct.smeltery.block.FaucetBlock;
 import slimeknights.tconstruct.smeltery.block.component.*;
 import slimeknights.tconstruct.smeltery.block.entity.component.SmelteryInputOutputBlockEntity;
 
@@ -34,6 +38,10 @@ public class TinkersTranscendBlocks {
     public static final DeferredItem<BlockTooltipItem> ROYAL_TIME_WARP_SMELTER_ITEM;
     public static final DeferredBlock<Block> SOURCE_ROCK;
     public static final DeferredItem<BlockItem> SOURCE_ROCK_ITEM;
+    public static final DeferredBlock<Block> RESENTFUL_STEEL_BLOCK;
+    public static final DeferredItem<BlockItem> RESENTFUL_STEEL_BLOCK_ITEM;
+    public static final DeferredBlock<Block> FOX_SOUL_STEEL_BLOCK;
+    public static final DeferredItem<BlockItem> FOX_SOUL_STEEL_BLOCK_ITEM;
 
     public static final DeferredBlock<RoyalFoundryControllerBlock> ROYAL_FOUNDRY_CONTROLLER;
     public static final DeferredItem<BlockTooltipItem> ROYAL_FOUNDRY_CONTROLLER_ITEM;
@@ -49,6 +57,10 @@ public class TinkersTranscendBlocks {
     public static final DeferredItem<BlockTooltipItem> ROYAL_TANK_ITEM;
     public static final DeferredBlock<LaserHeaterBlock> ROYAL_LASER_HEATER;
     public static final DeferredItem<BlockTooltipItem> ROYAL_LASER_HEATER_ITEM;
+    public static final DeferredBlock<FaucetBlock> ROYAL_FAUCET;
+    public static final DeferredItem<BlockTooltipItem> ROYAL_FAUCET_ITEM;
+    public static final DeferredBlock<ChannelBlock> ROYAL_CHANNEL;
+    public static final DeferredItem<BlockTooltipItem> ROYAL_CHANNEL_ITEM;
 
     public static final DeferredBlock<ChromaticAnvilBlock> CHROMATIC_ANVIL;
     public static final DeferredItem<BlockTooltipItem> CHROMATIC_ANVIL_ITEM;
@@ -104,11 +116,24 @@ public class TinkersTranscendBlocks {
         ROYAL_LASER_HEATER = TinkersTranscend.BLOCKS.register("royal_laser_heater",
                 ()->new LaserHeaterBlock(royal(),false));
         ROYAL_LASER_HEATER_ITEM = TinkersTranscend.ITEMS.register("royal_laser_heater",key->new BlockTooltipItem(ROYAL_LASER_HEATER.get(),new Item.Properties()));
+        ROYAL_FAUCET = TinkersTranscend.BLOCKS.register("royal_faucet",
+                ()->new FaucetBlock(royal()));
+        ROYAL_FAUCET_ITEM = TinkersTranscend.ITEMS.register("royal_faucet",key->new BlockTooltipItem(ROYAL_FAUCET.get(),new Item.Properties()));
+        ROYAL_CHANNEL = TinkersTranscend.BLOCKS.register("royal_channel",
+                ()->new ChannelBlock(royal()));
+        ROYAL_CHANNEL_ITEM = TinkersTranscend.ITEMS.register("royal_channel",key->new BlockTooltipItem(ROYAL_CHANNEL.get(),new Item.Properties()));
+
 
         CHROMATIC_ANVIL = TinkersTranscend.BLOCKS.register("chromatic_anvil",
                 ()-> new ChromaticAnvilBlock(BlockBehaviour.Properties.of().isRedstoneConductor((state, level, pos) -> false).mapColor(MapColor.EMERALD).sound(SoundType.AMETHYST)));
         CHROMATIC_ANVIL_ITEM = TinkersTranscend.ITEMS.register("chromatic_anvil", key->new BlockTooltipItem(CHROMATIC_ANVIL.get(), new Item.Properties()));
-        SOURCE_ROCK = TinkersTranscend.BLOCKS.registerSimpleBlock("source_rock");
+        SOURCE_ROCK = TinkersTranscend.BLOCKS.registerSimpleBlock("source_rock",scorched());
         SOURCE_ROCK_ITEM = TinkersTranscend.ITEMS.registerSimpleBlockItem(SOURCE_ROCK);
+        RESENTFUL_STEEL_BLOCK = TinkersTranscend.BLOCKS.registerSimpleBlock("resentful_steel_block",royal());
+        RESENTFUL_STEEL_BLOCK_ITEM = TinkersTranscend.ITEMS.registerSimpleBlockItem(RESENTFUL_STEEL_BLOCK);
+        FOX_SOUL_STEEL_BLOCK = TinkersTranscend.BLOCKS.registerSimpleBlock("fox_soul_steel_block",royal());
+        FOX_SOUL_STEEL_BLOCK_ITEM = TinkersTranscend.ITEMS.registerSimpleBlockItem(FOX_SOUL_STEEL_BLOCK,new Item.Properties().rarity(Rarity.RARE));
+
+
     }
 }

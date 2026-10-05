@@ -121,9 +121,7 @@ public class CarvingModifier extends Modifier implements
                 sound = SoundEvents.SLIME_HURT;
                 tool.setDamage(tool.getDamage()+1);
             }
-            double dx = world.getRandom().nextDouble()*0.2;
-            double dz = world.getRandom().nextDouble()*0.2;
-            world.addFreshEntity(new ItemEntity(target.level(),target.getX(),target.getY()+0.5,target.getZ(),stack,dx,0.2,dz));
+            world.addFreshEntity(new ItemEntity(target.level(),target.getX(),target.getY()+0.5,target.getZ(),stack));
             world.playSound(null,target.getX(),target.getY()+0.5,target.getZ(),sound, SoundSource.VOICE,1.0f,1.0f);
             return InteractionResult.SUCCESS;
 

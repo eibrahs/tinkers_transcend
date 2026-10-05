@@ -7,6 +7,11 @@
     "tinkers_transcend:time_warp_casting_table",
     "tinkers_transcend:time_warp_casting_basin",
     "#tinkers_transcend:royal_foundry",
-    "tinkers_transcend:royal_foundry_controller"
+    "tinkers_transcend:royal_foundry_controller",
+    "tinkers_transcend:royal_faucet",
+    "tinkers_transcend:royal_channel",
+    "tinkers_transcend:source_rock",
+    "tinkers_transcend:fox_soul_steel_block",
+    "tinkers_transcend:resentful_steel_block"
   ]
 }

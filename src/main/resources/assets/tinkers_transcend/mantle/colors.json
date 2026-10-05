@@ -5,6 +5,7 @@
 
 		"__": null,
 		"ferocious": "#fc0000",
+		"disdain": "#fc0000",
 		"eternal": "#d0c3f3",
 		"providence": "#fcc961",
 		"multiphase": "#da8ff7",
@@ -13,6 +14,8 @@
 		"war_axe": "#933434",
 		"vision": "#f2be45",
 		"radiance": "#f2be45",
-		"carving": "#85210d"
+		"carving": "#85210d",
+		"resent": "#3b3e52",
+		"fox_soul": "#78bed7"
 	}
 }

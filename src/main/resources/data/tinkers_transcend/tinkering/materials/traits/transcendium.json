@@ -33,6 +33,20 @@
           "level": 1,
           "name": "tinkers_transcend:multiphase"
         }
+      ],
+      "tconstruct:armor": [
+        {
+          "level": 1,
+          "name": "tinkers_transcend:disdain"
+        },
+        {
+          "level": 1,
+          "name": "tinkers_transcend:eternal"
+        },
+        {
+          "level": 1,
+          "name": "tinkers_transcend:providence"
+        }
       ]
     }
  }

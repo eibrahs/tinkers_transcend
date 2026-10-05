@@ -1,6 +1,8 @@
-package com.eibrahs.tinkerstranscend.tinker.modifiers;
+package com.eibrahs.tinkerstranscend.tinker.modifiers.handler;
 
 import com.eibrahs.tinkerstranscend.TinkersTranscendComponents;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.MultiphaseModifier;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.TinkersTranscendModifiers;
 import com.google.gson.JsonElement;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;

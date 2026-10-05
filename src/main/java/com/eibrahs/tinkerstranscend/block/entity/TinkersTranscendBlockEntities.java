@@ -33,7 +33,7 @@ public class TinkersTranscendBlockEntities {
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlockEntity(
                 Capabilities.FluidHandler.BLOCK, TIME_WARP_CASTING_BASIN_ENTITY.get(),
-                (blockEntity, side) -> blockEntity.getTank() // 返回你的方块实体内部的流体储罐
+                (blockEntity, side) -> blockEntity.getTank()
         );
         event.registerBlockEntity(
                 Capabilities.FluidHandler.BLOCK, TIME_WARP_CASTING_TABLE_ENTITY.get(),
@@ -50,6 +50,8 @@ public class TinkersTranscendBlockEntities {
         event.modify(TinkerSmeltery.duct.get(),TinkersTranscendBlocks.ROYAL_FOUNDRY_DUCT.get());
         event.modify(TinkerSmeltery.chute.get(),TinkersTranscendBlocks.ROYAL_FOUNDRY_CHUTE.get());
         event.modify(TinkerSmeltery.tank.get(),TinkersTranscendBlocks.ROYAL_TANK.get());
+        event.modify(TinkerSmeltery.faucet.get(),TinkersTranscendBlocks.ROYAL_FAUCET.get());
+        event.modify(TinkerSmeltery.channel.get(),TinkersTranscendBlocks.ROYAL_CHANNEL.get());
     }
     static{
         CHROMATIC_ANVIL_ENTITY = BLOCK_ENTITIES.register("chromatic_anvil", () ->

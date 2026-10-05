@@ -2,6 +2,7 @@ package com.eibrahs.tinkerstranscend.tinker.modifiers;
 
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import com.eibrahs.tinkerstranscend.TinkersTranscendComponents;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.handler.TTMultiphase;
 import dev.dubhe.anvilcraft.client.init.ModKeyMappings;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;

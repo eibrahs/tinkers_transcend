@@ -5,7 +5,9 @@ import com.eibrahs.tinkerstranscend.block.entity.TinkersTranscendBlockEntities;
 import com.eibrahs.tinkerstranscend.block.menu.TinkersTranscendMenus;
 import com.eibrahs.tinkerstranscend.client.particle.TinkersTranscendParticles;
 import com.eibrahs.tinkerstranscend.effect.TinkersTranscendEffects;
+import com.eibrahs.tinkerstranscend.entity.TinkersTranscendEntities;
 import com.eibrahs.tinkerstranscend.item.ChromaticAnvilHammerItem;
+import com.eibrahs.tinkerstranscend.item.TinkersTranscendItems;
 import com.eibrahs.tinkerstranscend.recipe.TinkersTranscendRecipes;
 import com.eibrahs.tinkerstranscend.tinker.modifiers.TinkersTranscendModifiers;
 import com.eibrahs.tinkerstranscend.tinker.TinkersTranscendTools;
@@ -21,9 +23,6 @@ import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -49,12 +48,7 @@ public class TinkersTranscend {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "TinkersTranscendium" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    // Creates a new Block with the id "tinkerstranscendium:example_block", combining the namespace and path
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    // Creates a new BlockItem with the id "tinkerstranscendium:example_block", combining the namespace and path
-    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-    public static final DeferredItem<ChromaticAnvilHammerItem> CHROMATIC_ANVIL_HAMMER = ITEMS.registerItem("chromatic_anvil_hammer",ChromaticAnvilHammerItem::new);
-    // Creates a new food item with the id "tinkerstranscendium:example_id", nutrition 1 and saturation 2
+   // Creates a new food item with the id "tinkerstranscendium:example_id", nutrition 1 and saturation 2
     //public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
     //        .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
     // Creates a creative tab with the id "tinkerstranscendium:example_tab" for the example item, that is placed after the combat tab
@@ -73,7 +67,7 @@ public class TinkersTranscend {
                 output.accept(TinkersTranscendFluids.MOLTEN_EARTH_CORE.getBucket());
                 output.accept(TinkersTranscendFluids.MOLTEN_CURSED_GOLD.getBucket());
                 output.accept(TinkersTranscendFluids.KEROGEN.getBucket());
-                output.accept(TinkersTranscendBlocks.SOURCE_ROCK_ITEM);
+                output.accept(TinkersTranscendBlocks.SOURCE_ROCK_ITEM.get());
                 output.accept(TinkersTranscendBlocks.TIME_WARP_CASTING_BASIN_ITEM.get());
                 output.accept(TinkersTranscendBlocks.TIME_WARP_CASTING_TABLE_ITEM.get());
                 output.accept(TinkersTranscendBlocks.SEARED_TIME_WARP_SMELTER_ITEM.get());
@@ -85,12 +79,19 @@ public class TinkersTranscend {
                 output.accept(TinkersTranscendBlocks.ROYAL_FOUNDRY_DUCT_ITEM.get());
                 output.accept(TinkersTranscendBlocks.ROYAL_FOUNDRY_CHUTE_ITEM.get());
                 output.accept(TinkersTranscendBlocks.ROYAL_TANK_ITEM.get());
+                output.accept(TinkersTranscendBlocks.ROYAL_FAUCET_ITEM.get());
+                output.accept(TinkersTranscendBlocks.ROYAL_CHANNEL_ITEM.get());
                 output.accept(TinkersTranscendBlocks.ROYAL_LASER_HEATER_ITEM.get());
                 output.accept(TinkersTranscendBlocks.CHROMATIC_ANVIL_ITEM.get());
-                output.accept(CHROMATIC_ANVIL_HAMMER.get());
+                output.accept(TinkersTranscendItems.CHROMATIC_ANVIL_HAMMER.get());
+                output.accept(TinkersTranscendBlocks.RESENTFUL_STEEL_BLOCK_ITEM.get());
+                output.accept(TinkersTranscendBlocks.FOX_SOUL_STEEL_BLOCK_ITEM.get());
+                output.accept(TinkersTranscendItems.RESENTFUL_STEEL_INGOT.get());
+                output.accept(TinkersTranscendItems.FOX_SOUL_STEEL_NUGGET.get());
+                output.accept(TinkersTranscendItems.RESENTFUL_STEEL_NUGGET.get());
+                output.accept(TinkersTranscendItems.FOX_SOUL_STEEL_INGOT.get());
                 output.accept(TinkersTranscendTools.HEAVY_HALBERD_GEAR_CAST.get());
                 output.accept(TinkersTranscendTools.RESONATOR_SHELL_CAST.get());
-                output.accept(CHROMATIC_ANVIL_HAMMER.get());
                 TinkersTranscendTools.RESONATOR_SHELL.get().addVariants(output::accept, "");
                 TinkersTranscendTools.RESONATOR_CORE.get().addVariants(output::accept, "");
                 ToolBuildHandler.addVariants(output::accept,TinkersTranscendTools.RESONATOR.get(),"");
@@ -123,6 +124,7 @@ public class TinkersTranscend {
         TinkersTranscendParticles.PARTICLE_TYPES.register(modEventBus);
         TinkersTranscendRecipes.RECIPE_SERIALIZERS.register(modEventBus);
         TinkersTranscendRecipes.TYPES.register(modEventBus);
+        TinkersTranscendAttachments.ATTACHMENT_TYPES.register(modEventBus);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (TinkersTranscendium) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -151,7 +153,6 @@ public class TinkersTranscend {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EXAMPLE_BLOCK_ITEM);
         }
     }
 

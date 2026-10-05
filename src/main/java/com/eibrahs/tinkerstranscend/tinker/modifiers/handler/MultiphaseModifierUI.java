@@ -1,6 +1,7 @@
-package com.eibrahs.tinkerstranscend.tinker.modifiers;
+package com.eibrahs.tinkerstranscend.tinker.modifiers.handler;
 
 import com.eibrahs.tinkerstranscend.TinkersTranscendComponents;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.MultiphaseModifier;
 import dev.dubhe.anvilcraft.client.init.ModKeyMappings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;

@@ -38,7 +38,6 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 
 public class FerociousModifier extends Modifier implements
-        AttributesModifierHook,
         EnchantmentModifierHook,
         ToolStatsModifierHook,
         TooltipModifierHook,
@@ -51,7 +50,6 @@ public class FerociousModifier extends Modifier implements
     public FerociousModifier(){}
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this,new ModuleHook[]{
-                ModifierHooks.ATTRIBUTES,
                 ModifierHooks.ENCHANTMENTS,
                 ModifierHooks.TOOL_STATS,
                 ModifierHooks.TOOLTIP,
@@ -97,7 +95,7 @@ public class FerociousModifier extends Modifier implements
         persistentData.putInt(KEY,count);
     }
 
-    public void addAttributes(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull EquipmentSlot slot, @NotNull BiConsumer<Attribute, AttributeModifier> consumer) {
+//    public void addAttributes(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull EquipmentSlot slot, @NotNull BiConsumer<Attribute, AttributeModifier> consumer) {
 //        IModDataView persistentData = tool.getPersistentData();
 //        if (persistentData.contains(KEY, Tag.TAG_INT )) {
 //            int current = persistentData.getInt(KEY);
@@ -108,8 +106,9 @@ public class FerociousModifier extends Modifier implements
 //                            AttributeModifier.Operation.ADD_VALUE));
 //                }
 //            }
-//        }
-    }
+//        }//这一段代码留作参考
+//    }
+
     public void addToolStats(IToolContext tool, @NotNull ModifierEntry modifier, @NotNull ModifierStatsBuilder builder){
         IModDataView persistentData = tool.getPersistentData();
         if (persistentData.contains(KEY, Tag.TAG_INT )) {
@@ -117,10 +116,6 @@ public class FerociousModifier extends Modifier implements
             if (tool.hasTag(TinkerTags.Items.HARVEST)||tool.hasTag(TinkerTags.Items.MELEE_WEAPON)) {
                 ToolStats.ATTACK_DAMAGE.add(builder, (int) (2.0D * Math.sqrt(value) + 0.33D * (double) value));
                 ToolStats.MINING_SPEED.add(builder, persistentData.getInt(KEY));
-            }
-            if (tool.hasTag(TinkerTags.Items.ARMOR)) {
-                ToolStats.ARMOR.add(builder,(int) (2.0D * Math.sqrt(value) + 0.33D * (double) value));
-                ToolStats.KNOCKBACK_RESISTANCE.add(builder, persistentData.getInt(KEY) * 0.01f);
             }
         }
     }
@@ -132,17 +127,10 @@ public class FerociousModifier extends Modifier implements
             if (persistentData.contains(this.KEY, Tag.TAG_INT )) {
                 float value = persistentData.getInt(this.KEY);
                 if (tool.hasTag(TinkerTags.Items.HARVEST)||tool.hasTag(TinkerTags.Items.MELEE_WEAPON)) {
-                    tooltip.add(Component.translatable("modifier.tinkers_transcend."+modifierName+".tooltip.text_tool").withColor(modifier.getModifier().getColor()));
+                    tooltip.add(Component.translatable("modifier.tinkers_transcend."+modifierName+".tooltip.text").withColor(modifier.getModifier().getColor()));
 
                     TooltipModifierHook.addFlatBoost(modifier.getModifier(),Component.translatable("modifier.tinkers_transcend."+modifierName+".tooltip.attack_damage"),(int)(2.0D * Math.sqrt(value)+0.33D * (double)value) ,tooltip);
                     TooltipModifierHook.addFlatBoost(modifier.getModifier(),Component.translatable("modifier.tinkers_transcend."+modifierName+".tooltip.mining_speed"),value ,tooltip);
-                }
-                if (tool.hasTag(TinkerTags.Items.ARMOR)) {
-                    tooltip.add(Component.translatable("modifier.tinkers_transcend."+modifierName+".tooltip.text_armor").withColor(modifier.getModifier().getColor()));
-
-                    TooltipModifierHook.addFlatBoost(modifier.getModifier(),Component.translatable("modifier.tinkers_transcend."+modifierName+".tooltip.armor"),(int)(2.0D * Math.sqrt(value)+0.33D * (double)value) ,tooltip);
-                    TooltipModifierHook.addPercentBoost(modifier.getModifier(),Component.translatable("modifier.tinkers_transcend."+modifierName+".tooltip.knockback_resistance"),value * 0.01f ,tooltip);
-
                 }
             }
         }

@@ -1,0 +1,11 @@
+{
+  "type": "mantle:empty_item",
+  "fluid": {
+    "amount": 250,
+    "tag": "tinkers_transcend:fox_soul"
+  },
+  "input": {
+    "item": "tinkers_transcend:fox_soul_bottle"
+  },
+  "result": "minecraft:glass_bottle"
+}

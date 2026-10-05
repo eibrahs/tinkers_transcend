@@ -1,0 +1,6 @@
+{
+  "parent": "tconstruct:block/template/channel/center",
+  "textures": {
+    "texture": "anvilcraft:block/smooth_royal_steel_block"
+  }
+}

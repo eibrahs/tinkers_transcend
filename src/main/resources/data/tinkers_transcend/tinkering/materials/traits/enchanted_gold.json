@@ -3,6 +3,10 @@
     {
       "level": 1,
       "name": "tinkers_transcend:vision"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:golden"
     }
   ],
   "perStat": {
@@ -10,6 +14,14 @@
       {
         "level": 1,
         "name": "tinkers_transcend:radiance"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:golden"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:magic_protection"
       }
     ]
   }

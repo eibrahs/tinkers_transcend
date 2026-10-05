@@ -1,6 +1,6 @@
 package com.eibrahs.tinkerstranscend;
 
-import com.eibrahs.tinkerstranscend.tinker.modifiers.TTMultiphase;
+import com.eibrahs.tinkerstranscend.tinker.modifiers.handler.TTMultiphase;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.neoforge.registries.DeferredRegister;

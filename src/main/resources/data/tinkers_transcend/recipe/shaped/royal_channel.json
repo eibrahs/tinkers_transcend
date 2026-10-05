@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "anvilcraft:royal_steel_ingot"
+    }
+  },
+  "pattern": [
+    "R R",
+    "RRR",
+    "   "
+  ],
+  "result": {
+    "count": 3,
+    "id": "tinkers_transcend:royal_channel"
+  }
+}
