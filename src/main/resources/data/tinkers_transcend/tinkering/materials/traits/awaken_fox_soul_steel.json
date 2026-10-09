@@ -1,0 +1,94 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tconstruct:soulbound"
+    },
+    {
+      "level": 2,
+      "name": "tinkers_transcend:fox_soul"
+    },
+    {
+      "level": 2,
+      "name": "tconstruct:necrotic"
+    },
+    {
+      "level": 2,
+      "name": "tconstruct:fortunate"
+    }
+  ],
+  "perStat": {
+    "tconstruct:binding": [
+      {
+        "level": 1,
+        "name": "tconstruct:soulbound"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_transcend:fox_soul"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:necrotic"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:fortunate"
+      }
+    ],
+    "tconstruct:maille": [
+      {
+        "level": 1,
+        "name": "tconstruct:soulbound"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_transcend:fox_soul"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:magic_protection"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:knockback_resistance"
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tconstruct:soulbound"
+      },
+      {
+        "level": 2,
+        "name": "tinkers_transcend:fox_soul"
+      },
+      {
+        "level": 2,
+        "name": "tconstruct:magic_protection"
+      },
+      {
+        "level": 2,
+        "name": "tconstruct:knockback_resistance"
+      }
+    ],
+    "tconstruct:shield": [
+      {
+        "level": 1,
+        "name": "tconstruct:soulbound"
+      },
+      {
+        "level": 2,
+        "name": "tinkers_transcend:fox_soul"
+      },
+      {
+        "level": 2,
+        "name": "tconstruct:magic_protection"
+      },
+      {
+        "level": 2,
+        "name": "tconstruct:boundless"
+      }
+    ]
+  }
+}

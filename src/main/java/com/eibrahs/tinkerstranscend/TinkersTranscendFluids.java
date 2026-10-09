@@ -58,6 +58,8 @@ public class TinkersTranscendFluids {
             .color(0xFF78bed7).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40).noBucket();
     public static FluidRegister MOLTEN_RESENTFUL_STEEL = new FluidRegister("molten_resentful_steel")
             .color(0xFF4e5365).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40);
+    public static FluidRegister AWAKEN_FOX_SOUL = new FluidRegister("awaken_fox_soul")
+            .color(0xFF4988d7).init().slopeFindDistance(4).levelDecreasePerBlock(1).tickRate(40).noBucket();
     static{
         RegisterList.forEach(FluidRegister::register);
     }

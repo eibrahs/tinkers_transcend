@@ -1,6 +1,6 @@
 package com.eibrahs.tinkerstranscend.tinker.modifiers.handler;
 
-import com.eibrahs.tinkerstranscend.TinkersTranscend;
+import com.eibrahs.tinkerstranscend.TTConfig;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -8,9 +8,9 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 
 public record MagicShield(float value, float max, float regeneration,long brokenTime) {
-    private static final float REGEN_PER_LEVEL = 0.25f;
-    private static final float MAX_PER_LEVEL = 2.5f;
-    private static final long REGEN_TIME = 100;
+    private static float REGEN_PER_LEVEL = 0;
+    private static float MAX_PER_LEVEL = 0;
+    private static final long REGEN_COOLDOWN = 100;
     public static final Codec<MagicShield> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.FLOAT.fieldOf("value").forGetter(MagicShield::value),
             Codec.FLOAT.fieldOf("max").forGetter(MagicShield::max),
@@ -25,6 +25,14 @@ public record MagicShield(float value, float max, float regeneration,long broken
                     ByteBufCodecs.VAR_LONG,MagicShield::brokenTime,
                     MagicShield::new
             );
+    public static MagicShield createDefault() {
+        return new MagicShield(0f, 0, 0, 0).initConfig();
+    }
+    public MagicShield initConfig(){
+        REGEN_PER_LEVEL = (float)TTConfig.MODIFIER_FOX_SOUL_MAGIC_SHIELD_REGEN.getAsDouble();
+        MAX_PER_LEVEL = (float)TTConfig.MODIFIER_FOX_SOUL_MAGIC_SHIELD_MAX_VALUE.getAsDouble();
+        return this;
+    }
     public MagicShield takeDamage(float damage){
         return new MagicShield(Math.max(0.0f,value-damage),max,regeneration,brokenTime);
     }
@@ -53,6 +61,6 @@ public record MagicShield(float value, float max, float regeneration,long broken
         return new MagicShield(value,max,regeneration,time);
     }
     public boolean canRegen(long gameTime){
-        return (gameTime - brokenTime) > REGEN_TIME;
+        return (gameTime - brokenTime) > REGEN_COOLDOWN;
     }
 }

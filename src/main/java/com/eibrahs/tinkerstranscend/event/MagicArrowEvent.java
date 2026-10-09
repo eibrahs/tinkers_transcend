@@ -16,7 +16,7 @@ public class MagicArrowEvent {
     @SubscribeEvent
     public static void onLivingGetProjectile(LivingGetProjectileEvent event) {
         if (!(event.getEntity() instanceof Player player)) return;
-        if (player.level().isClientSide) return;
+        //if (player.level().isClientSide) return;
         ItemStack projectileStack = event.getProjectileItemStack();
         if (!projectileStack.isEmpty() && !(projectileStack.is(Items.ARROW))) return;
 

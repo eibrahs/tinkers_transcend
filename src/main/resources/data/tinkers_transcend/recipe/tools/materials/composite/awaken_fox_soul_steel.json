@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 50,
+    "fluid": "tinkers_transcend:awaken_fox_soul"
+  },
+  "input": "tinkers_transcend:fox_soul_steel",
+  "output": "tinkers_transcend:awaken_fox_soul_steel",
+  "temperature": 20000000
+}

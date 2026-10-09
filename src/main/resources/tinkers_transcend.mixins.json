@@ -11,7 +11,10 @@
     "ModifiableLauncherItemMixin",
     "BaseLaserBlockEntityMixin",
     "FoxPickupItemMixin",
-    "ToolStatsMixin"
+    "ToolStatsMixin",
+    "ItemRendererMixin",
+    "HumanoidArmorLayerMixin",
+    "MultilayerArmorModelMixin"
   ],
   "client": [],
   "server": [],

@@ -1,5 +1,6 @@
 package com.eibrahs.tinkerstranscend.entity.projectile;
 
+import com.eibrahs.tinkerstranscend.TTConfig;
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import com.eibrahs.tinkerstranscend.tinker.modifiers.TinkersTranscendModifiers;
 import net.minecraft.core.particles.ParticleTypes;
@@ -25,6 +26,7 @@ import net.minecraft.world.phys.Vec3;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class FoxSoulArrowEntity extends AbstractArrow {
+    private static final float MAGIC_DAMAGE = (float) (TTConfig.MODIFIER_FOX_SOUL_MAGIC_DAMAGE.getAsDouble());
     public static final ResourceKey<DamageType> DAMAGE_TYPE = ResourceKey.create(
             Registries.DAMAGE_TYPE,
             ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "fox_soul")
@@ -64,7 +66,7 @@ public class FoxSoulArrowEntity extends AbstractArrow {
             hitParticles(hitPos);
 
             DamageSource magicSource = new DamageSource(serverLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DAMAGE_TYPE), this, this.getOwner());
-            target.hurt(magicSource, 1.0F*getModifierLevel());
+            target.hurt(magicSource, MAGIC_DAMAGE*getModifierLevel());
         }
     }
     private void hitParticles(Vec3 location) {

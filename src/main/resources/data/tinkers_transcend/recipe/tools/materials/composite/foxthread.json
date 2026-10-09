@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 50,
+    "fluid": "tinkers_transcend:fox_soul"
+  },
+  "input": "tconstruct:string",
+  "output": "tinkers_transcend:foxthread",
+  "temperature": 200
+}

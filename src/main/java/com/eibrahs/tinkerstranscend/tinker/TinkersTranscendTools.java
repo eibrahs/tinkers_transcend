@@ -15,8 +15,8 @@ import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 @Mod(TinkersTranscend.MODID)
 public class TinkersTranscendTools {
-    protected static final Item.Properties UNSTACKABLE_PROPS;
     public static final DeferredItem<ModifiableItem> WAR_AXE;
+    public static final DeferredItem<ModifiableItem> HUNTING_KNIFE;
 
     public static final DeferredItem<ToolPartItem> RESONATOR_CORE;
     public static final DeferredItem<ToolPartItem> RESONATOR_SHELL;
@@ -26,16 +26,21 @@ public class TinkersTranscendTools {
     public static final DeferredItem<ModifiableHeavyHalberdItem> HEAVY_HALBERD;
     public static final DeferredItem<Item> HEAVY_HALBERD_GEAR_CAST;
     public static final DeferredItem<Item> RESONATOR_SHELL_CAST;
-    public static final DeferredItem<ModifiableItem> HUNTING_KNIFE;
 
+    private static Item.Properties unstackable(){
+        return new Item.Properties().stacksTo(1);
+    }
     static{
-        UNSTACKABLE_PROPS = (new Item.Properties()).stacksTo(1);
         WAR_AXE = TinkersTranscend.ITEMS.register("war_axe", () -> new ModifiableItem(
-                UNSTACKABLE_PROPS,
+                unstackable(),
                 ToolDefinition.create(ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "war_axe"))
         ));
+        HUNTING_KNIFE = TinkersTranscend.ITEMS.register("hunting_knife", () -> new ModifiableItem(
+                unstackable(),
+                ToolDefinition.create(ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hunting_knife"))
+        ));
         RESONATOR = TinkersTranscend.ITEMS.register("resonator", () -> new ModifiableResonatorItem(
-                UNSTACKABLE_PROPS,
+                unstackable(),
                 ToolDefinition.create(ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "resonator"))
         ));
         RESONATOR_CORE = TinkersTranscend.ITEMS.register("resonator_core",()->new ToolPartItem(
@@ -55,15 +60,11 @@ public class TinkersTranscendTools {
                 HeadMaterialStats.ID
         ));
         HEAVY_HALBERD = TinkersTranscend.ITEMS.register("heavy_halberd",()->new ModifiableHeavyHalberdItem(
-                UNSTACKABLE_PROPS,
+                unstackable(),
                 ToolDefinition.create(ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID,"heavy_halberd"))
         ));
         HEAVY_HALBERD_GEAR_CAST = TinkersTranscend.ITEMS.registerSimpleItem("heavy_halberd_gear_cast");
         RESONATOR_SHELL_CAST = TinkersTranscend.ITEMS.registerSimpleItem("resonator_shell_cast");
-        HUNTING_KNIFE = TinkersTranscend.ITEMS.register("hunting_knife", () -> new ModifiableItem(
-                UNSTACKABLE_PROPS,
-                ToolDefinition.create(ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hunting_knife"))
-        ));
     }
 }
 /*

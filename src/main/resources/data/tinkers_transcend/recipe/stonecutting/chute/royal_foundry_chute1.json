@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "tinkers_transcend:royal_foundry_chute"
+  },
+  "result": {
+    "count": 1,
+    "id": "tinkers_transcend:royal_foundry_chute",
+    "components": {
+      "minecraft:custom_data": {
+        "texture": "anvilcraft:royal_steel_block"
+      }
+    }
+  }
+}

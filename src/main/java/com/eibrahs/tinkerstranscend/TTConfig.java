@@ -45,6 +45,16 @@ public class TTConfig {
     public static final ModConfigSpec.BooleanValue MODIFIER_MATURE_MINING_SPEED_RATE = BUILDER
             .comment("老成 - 挖掘速度加成是数值(false)还是倍率(true)")
             .define("modifier.mature_mining_speed_rate",true);
+
+    public static final ModConfigSpec.DoubleValue MODIFIER_FOX_SOUL_MAGIC_SHIELD_MAX_VALUE = BUILDER
+            .comment("狐魂 - 每级提供护盾量")
+            .defineInRange("modifier.fox_soul_magic_shield_max_value",2.5,0.0,Double.MAX_VALUE);
+    public static final ModConfigSpec.DoubleValue MODIFIER_FOX_SOUL_MAGIC_SHIELD_REGEN = BUILDER
+            .comment("狐魂 - 每级提供每秒护盾回复量")
+            .defineInRange("modifier.fox_soul_magic_shield_regen",0.25,0.0,Double.MAX_VALUE);
+    public static final ModConfigSpec.DoubleValue MODIFIER_FOX_SOUL_MAGIC_DAMAGE = BUILDER
+            .comment("狐魂 - 每级附加魔法伤害量")
+            .defineInRange("modifier.fox_soul_magic_damage",1,0,Double.MAX_VALUE);
     static final ModConfigSpec SPEC = BUILDER.build();
 
 }

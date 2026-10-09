@@ -88,6 +88,7 @@ public class CarvingModifier extends Modifier implements
 
     @Override
     public InteractionResult afterEntityUse(IToolStackView tool, ModifierEntry modifier, Player player, LivingEntity target, InteractionHand hand, InteractionSource source) {
+        if (target.invulnerableTime>0) return InteractionResult.PASS;
         Holder<MobEffect> effect = TinkersTranscendEffects.CARVED;
         Level world = player.level();
         if (world.isClientSide)return InteractionResult.PASS;

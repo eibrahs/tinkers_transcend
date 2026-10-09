@@ -13,7 +13,7 @@ public class TinkersTranscendAttachments {
             DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, TinkersTranscend.MODID);
     public static final Supplier<AttachmentType<MagicShield>> MAGIC_SHIELD = ATTACHMENT_TYPES.register(
             "magic_shield",
-            () -> AttachmentType.builder(() -> new MagicShield(0.0f,0.0f,0.0f,0))
+            () -> AttachmentType.builder(MagicShield::createDefault)
                     .serialize(MagicShield.CODEC)
                     .sync(MagicShield.STREAM_CODEC)
                     .build()

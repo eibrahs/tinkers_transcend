@@ -62,6 +62,10 @@ public class MagicShieldLayer implements LayeredDraw.Layer {
             }
             // 否则什么都不画，就保留 EMPTY 底座
         }
+        if (shield.max()>20.0f) {
+            guiGraphics.drawString(mc.font, String.format("%.0f/%.0f", shield.value(), shield.max()), x-30, y, 0x4988d7, true);
+        }
+
 
         RenderSystem.defaultBlendFunc();
         RenderSystem.disableBlend();
