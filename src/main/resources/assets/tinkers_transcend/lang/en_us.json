@@ -311,5 +311,7 @@
   "modifier.tinkers_transcend.fox_soul.description": "使武器附加魔法伤害、护甲获得魔法护盾",
   "modifier.tinkers_transcend.fox_soul.tooltip.magic_shield": "魔法护盾",
   "modifier.tinkers_transcend.fox_soul.tooltip.magic_damage": "魔法伤害",
-  "death.attack.fox_soul": "%1$s 的魂魄迷失了"
+  "death.attack.fox_soul": "%1$s 的魂魄迷失了",
+  "sound.tinkers_transcend.magic_shield_hurt": "护盾：受击",
+  "sound.tinkers_transcend.magic_shield_break": "护盾：破碎"
 }

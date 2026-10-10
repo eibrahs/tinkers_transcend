@@ -1,0 +1,32 @@
+{
+  "magic_shield_hurt_c1": {
+    "subtitle": "sound.tinkers_transcend.magic_shield_hurt",
+    "sounds": [
+      "mob/endermen/portal"
+    ]
+  },
+  "magic_shield_hurt_c2": {
+    "sounds": [
+      "mob/enderdragon/hit1",
+      "mob/enderdragon/hit2",
+      "mob/enderdragon/hit3",
+      "mob/enderdragon/hit4"
+    ]
+  },
+  "magic_shield_break_c1": {
+    "subtitle": "sound.tinkers_transcend.magic_shield_break",
+    "sounds": [
+      "random/glass1",
+      "random/glass2",
+      "random/glass3"
+    ]
+  },
+  "magic_shield_break_c2": {
+    "sounds": [
+      "item/armor/crack_wolf1",
+      "item/armor/crack_wolf2",
+      "item/armor/crack_wolf3",
+      "item/armor/crack_wolf4"
+    ]
+  }
+}

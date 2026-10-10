@@ -43,7 +43,7 @@ public class MagicShieldBarLayer implements LayeredDraw.Layer {
                 GlStateManager.SourceFactor.ONE,
                 GlStateManager.DestFactor.ZERO
         );
-        int barX = x+33,barY = y+10,barWidth = 93,barHeight = 7;
+        int barX = x+33,barY = y+10,barWidth = 94,barHeight = 7;
         guiGraphics.fill(barX, barY, barX + barWidth, barY + barHeight, 0x80000000);
 
         float newRatio = shield.max() > 0 ? shield.value() / shield.max() : 0;

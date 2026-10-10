@@ -61,7 +61,10 @@ public class TTConfig {
     private static final ModConfigSpec.Builder CLIENT_BUILDER = new ModConfigSpec.Builder();
     public static final ModConfigSpec.BooleanValue MAGIC_SHIELD_STYLE = CLIENT_BUILDER
             .comment("魔法护盾显示风格，true:心型;false:条形")
-            .define("gui.magic_shield_style",true);
+            .define("display.magic_shield_style",true);
+    public static final ModConfigSpec.BooleanValue MAGIC_SHIELD_FOX_SOUND = CLIENT_BUILDER
+            .comment("是否开启魔法护盾狐狸音效，true:开启;false:关闭")
+            .define("display.magic_shield_fox_sound",true);
     static final ModConfigSpec CLIENT_SPEC = CLIENT_BUILDER.build();
 
 }

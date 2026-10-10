@@ -9,6 +9,7 @@ import com.eibrahs.tinkerstranscend.entity.TinkersTranscendEntities;
 import com.eibrahs.tinkerstranscend.item.ChromaticAnvilHammerItem;
 import com.eibrahs.tinkerstranscend.item.TinkersTranscendItems;
 import com.eibrahs.tinkerstranscend.recipe.TinkersTranscendRecipes;
+import com.eibrahs.tinkerstranscend.sound.TinkersTranscendSounds;
 import com.eibrahs.tinkerstranscend.tinker.modifiers.TinkersTranscendModifiers;
 import com.eibrahs.tinkerstranscend.tinker.TinkersTranscendTools;
 import net.minecraft.data.DataGenerator;
@@ -125,6 +126,7 @@ public class TinkersTranscend {
         TinkersTranscendRecipes.RECIPE_SERIALIZERS.register(modEventBus);
         TinkersTranscendRecipes.TYPES.register(modEventBus);
         TinkersTranscendAttachments.ATTACHMENT_TYPES.register(modEventBus);
+        TinkersTranscendSounds.SOUND_EVENTS.register(modEventBus);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (TinkersTranscendium) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
