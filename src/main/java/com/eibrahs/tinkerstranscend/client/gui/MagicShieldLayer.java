@@ -1,5 +1,6 @@
 package com.eibrahs.tinkerstranscend.client.gui;
 
+import com.eibrahs.tinkerstranscend.TTConfig;
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import com.eibrahs.tinkerstranscend.TinkersTranscendAttachments;
 import com.eibrahs.tinkerstranscend.tinker.modifiers.handler.MagicShield;
@@ -16,12 +17,13 @@ public class MagicShieldLayer implements LayeredDraw.Layer {
     private static final ResourceLocation SHIELD_FULL = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hud/magic_shield_full");
     private static final ResourceLocation SHIELD_HALF = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hud/magic_shield_half");
     private static final ResourceLocation SHIELD_EMPTY = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hud/magic_shield_empty");
-
+    private static final boolean heartStyle = TTConfig.MAGIC_SHIELD_STYLE.get();
     private static final int ICON_SIZE = 9; // 图标尺寸，通常和心形图标一致
     private static final int ICON_SPACING = 8; // 图标间距
     private static final float SHIELD_PER_ICON = 2.0f;
     @Override
     public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+        if (!heartStyle) return;
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
         if (player == null || mc.options.hideGui || player.isSpectator() || player.isCreative()) return;

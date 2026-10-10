@@ -3,6 +3,7 @@ package com.eibrahs.tinkerstranscend;
 import com.eibrahs.tinkerstranscend.block.entity.TimeWarpCastingBlockEntity;
 import com.eibrahs.tinkerstranscend.block.entity.TinkersTranscendBlockEntities;
 import com.eibrahs.tinkerstranscend.block.menu.TinkersTranscendMenus;
+import com.eibrahs.tinkerstranscend.client.gui.MagicShieldBarLayer;
 import com.eibrahs.tinkerstranscend.client.gui.MagicShieldLayer;
 import com.eibrahs.tinkerstranscend.client.model.ToolElementsModel;
 import com.eibrahs.tinkerstranscend.client.particle.TinkersTranscendParticles;
@@ -86,6 +87,11 @@ public class TinkersTranscendClient {
                 VanillaGuiLayers.PLAYER_HEALTH,
                 ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "magic_shield"),
                 new MagicShieldLayer()
+        );
+        event.registerAbove(
+                VanillaGuiLayers.ARMOR_LEVEL,
+                ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "magic_shield_bar"),
+                new MagicShieldBarLayer()
         );
     }
 }

@@ -57,4 +57,11 @@ public class TTConfig {
             .defineInRange("modifier.fox_soul_magic_damage",1,0,Double.MAX_VALUE);
     static final ModConfigSpec SPEC = BUILDER.build();
 
+
+    private static final ModConfigSpec.Builder CLIENT_BUILDER = new ModConfigSpec.Builder();
+    public static final ModConfigSpec.BooleanValue MAGIC_SHIELD_STYLE = CLIENT_BUILDER
+            .comment("魔法护盾显示风格，true:心型;false:条形")
+            .define("gui.magic_shield_style",true);
+    static final ModConfigSpec CLIENT_SPEC = CLIENT_BUILDER.build();
+
 }

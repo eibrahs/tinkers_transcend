@@ -135,6 +135,7 @@ public class TinkersTranscend {
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         //modContainer.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
         modContainer.registerConfig(ModConfig.Type.COMMON, TTConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.CLIENT, TTConfig.CLIENT_SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

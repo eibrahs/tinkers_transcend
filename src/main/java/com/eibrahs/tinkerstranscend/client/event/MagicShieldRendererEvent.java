@@ -2,6 +2,7 @@ package com.eibrahs.tinkerstranscend.client.event;
 
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import com.eibrahs.tinkerstranscend.TinkersTranscendAttachments;
+import com.eibrahs.tinkerstranscend.client.shader.TinkersTranscendShaders;
 import com.eibrahs.tinkerstranscend.tinker.modifiers.handler.MagicShield;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -54,18 +55,16 @@ public class MagicShieldRendererEvent {
         poseStack.translate(0.0F, -1.501F, 0.0F);
 
         float scale = 1.35f;
-
-        ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(
-                TinkersTranscend.MODID, "textures/effect/shield.png");
+        float alpha = 0.5f;
         VertexConsumer consumer = buffer.getBuffer(
-                RenderType.entityTranslucent(texture));
+                TinkersTranscendShaders.MAGIC_SHIELD_RENDER_TYPE);
 
-        renderPart(model.head, poseStack, consumer, packedLight, packedOverlay, 0.5f,scale);
-        renderPart(model.body, poseStack, consumer, packedLight, packedOverlay, 0.5f,1.0f);
-        renderPart(model.rightArm, poseStack, consumer, packedLight, packedOverlay, 0.5f,scale);
-        renderPart(model.leftArm, poseStack, consumer, packedLight, packedOverlay, 0.5f,scale);
-        renderPart(model.rightLeg, poseStack, consumer, packedLight, packedOverlay, 0.5f,scale,1.0f,scale);
-        renderPart(model.leftLeg, poseStack, consumer, packedLight, packedOverlay, 0.5f,scale,1.0f,scale);
+        renderPart(model.head, poseStack, consumer, packedLight, packedOverlay, alpha,scale);
+        renderPart(model.body, poseStack, consumer, packedLight, packedOverlay, alpha,1.05f);
+        renderPart(model.rightArm, poseStack, consumer, packedLight, packedOverlay, alpha,scale,1.15f,scale);
+        renderPart(model.leftArm, poseStack, consumer, packedLight, packedOverlay, alpha,scale,1.15f,scale);
+        renderPart(model.rightLeg, poseStack, consumer, packedLight, packedOverlay, alpha,scale,1.05f,scale);
+        renderPart(model.leftLeg, poseStack, consumer, packedLight, packedOverlay, alpha,scale,1.05f,scale);
         poseStack.popPose();
     }
     private static void renderPart(ModelPart part, PoseStack poseStack,

@@ -50,6 +50,7 @@ public class MagicShieldEvent {
         if (!(shield.canRegen(player.level().getGameTime()))) return;
 
         player.setData(TinkersTranscendAttachments.MAGIC_SHIELD, shield.regen());
+        if (player.getArrowCount()>0) player.setArrowCount(0);
     }
     @SubscribeEvent
     public static void onPlayerLoggedOut(PlayerEvent.PlayerLoggedOutEvent event) {
