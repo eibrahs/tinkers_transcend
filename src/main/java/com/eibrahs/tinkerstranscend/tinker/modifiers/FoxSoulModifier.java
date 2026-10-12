@@ -3,6 +3,7 @@ package com.eibrahs.tinkerstranscend.tinker.modifiers;
 import com.eibrahs.tinkerstranscend.TTConfig;
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import com.eibrahs.tinkerstranscend.TinkersTranscendAttachments;
+import com.eibrahs.tinkerstranscend.tinker.TinkersTranscendMaterials;
 import com.eibrahs.tinkerstranscend.tinker.modifiers.handler.MagicShield;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -168,7 +169,7 @@ public class FoxSoulModifier extends Modifier implements
 
     @Override
     public void addRawData(IToolStackView tool, ModifierEntry modifierEntry, RestrictedCompoundTag tag) {
-        MaterialId materialId = MaterialId.tryBuild(TinkersTranscend.MODID, "awaken_fox_soul_steel");
+        MaterialId materialId = TinkersTranscendMaterials.awwaken_fox_soul_steel;
         boolean isFoil = false;
         if (materialId != null) {
             MaterialNBT nbt = tool.getMaterials();

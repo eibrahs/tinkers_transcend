@@ -1,6 +1,6 @@
-package com.eibrahs.tinkerstranscend;
+package com.eibrahs.tinkerstranscend.tinker;
 
-import net.minecraft.resources.ResourceLocation;
+import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
 public class TinkersTranscendMaterials {
@@ -11,8 +11,9 @@ public class TinkersTranscendMaterials {
     public static final MaterialId transcendthread = createMaterial("transcendthread");
     public static final MaterialId emberthread = createMaterial("emberthread");
     public static final MaterialId frosthread = createMaterial("frosthread");
+    public static final MaterialId awwaken_fox_soul_steel = createMaterial("awaken_fox_soul_steel");
 
     public static MaterialId createMaterial(String name) {
-        return new MaterialId(ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, name)); //*是你的模组主类名
+        return MaterialId.tryBuild(TinkersTranscend.MODID, name); //*是你的模组主类名
     }
 }

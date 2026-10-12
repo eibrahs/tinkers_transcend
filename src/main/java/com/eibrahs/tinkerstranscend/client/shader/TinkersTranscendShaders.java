@@ -31,10 +31,12 @@ public class TinkersTranscendShaders {
     public static final ResourceLocation COLORFUL_GLINT_ENTITY =ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID,"textures/misc/colorful_glint_entity.png");
     public static final ResourceLocation MAGIC_SHIELD_BACKGROUND = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "textures/misc/magic_shield_bg.png");
     public static final ResourceLocation MAGIC_SHIELD_PARTICLES = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "textures/misc/magic_shield_particles.png");
+    public static final ResourceLocation MAGIC_SHIELD_WAVES = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "textures/misc/magic_shield_waves.png");
 
     public static final RenderType COLORFUL_GLINT_RENDER_TYPE;
     public static final RenderType ARMOR_ENTITY_COLORFUL_GLINT_RENDER_TYPE;
     public static final RenderType MAGIC_SHIELD_RENDER_TYPE;
+    private static final RenderType BLOCK_OUTLINE;
 
     public static RenderType getColorfulGlintRenderType(){
         return COLORFUL_GLINT_RENDER_TYPE;
@@ -42,6 +44,7 @@ public class TinkersTranscendShaders {
     public static RenderType getArmorEntityColorfulGlintRenderType(){
         return ARMOR_ENTITY_COLORFUL_GLINT_RENDER_TYPE;
     }
+    public static RenderType getBlockOutline(){return BLOCK_OUTLINE;}
     public static void setColorfulGlintShaderColor(float r,float g,float b,float a){
         if (colorfulGlintShader != null) {
             colorfulGlintShader.safeGetUniform("GlintColor").set(r, g, b, a);
@@ -50,6 +53,14 @@ public class TinkersTranscendShaders {
     public static void setArmorEntityColorfulGlintShaderColor(float r,float g,float b,float a){
         if (armorEntityColorfulGlintShader != null) {
             armorEntityColorfulGlintShader.safeGetUniform("GlintColor").set(r, g, b, a);
+        }
+    }
+    public static void setMagicShieldShader(int color,int weight,int height){
+        float[] rgba = colorToRGBA(color);
+        float r=rgba[0],g=rgba[1],b=rgba[2],a=rgba[3];
+        if(magicShieldShader!=null){
+            magicShieldShader.safeGetUniform("BackgroundColor").set(r,g,b,a);
+            magicShieldShader.safeGetUniform("Resolution").set((float)weight,(float)height);
         }
     }
 
@@ -80,6 +91,15 @@ public class TinkersTranscendShaders {
         event.registerRenderBuffer(COLORFUL_GLINT_RENDER_TYPE);
         event.registerRenderBuffer(ARMOR_ENTITY_COLORFUL_GLINT_RENDER_TYPE);
         event.registerRenderBuffer(MAGIC_SHIELD_RENDER_TYPE);
+        event.registerRenderBuffer(BLOCK_OUTLINE);
+    }
+    public static float[] colorToRGBA(int color){
+        float[] result =  new float[4];
+        result[0] = ((color >> 16) & 0xFF) / 255.0f;
+        result[1] = ((color >> 8) & 0xFF) / 255.0f;
+        result[2] = (color & 0xFF) / 255.0f;
+        result[3] = ((color >> 24) & 0xFF) / 255.0f;
+        return result;
     }
     static{
         COLORFUL_GLINT_RENDER_TYPE = RenderType.create(
@@ -122,14 +142,13 @@ public class TinkersTranscendShaders {
                         .setShaderState(MAGIC_SHIELD_SHADER)
                         .setTextureState(RenderStateShard.MultiTextureStateShard.builder()
                                 .add(MAGIC_SHIELD_BACKGROUND, false, false)
-                                .add(MAGIC_SHIELD_PARTICLES, false, false)
+                                .add(MAGIC_SHIELD_WAVES, false, false)
                                 .build())
                         .setWriteMaskState(RenderType.COLOR_WRITE)
                         .setCullState(RenderType.NO_CULL)
                         .setTransparencyState(RenderType.TRANSLUCENT_TRANSPARENCY)
                         .createCompositeState(false)
         );
-
-
+        BLOCK_OUTLINE = RenderType.outline(ResourceLocation.withDefaultNamespace("textures/misc/white.png"));
     }
 }

@@ -1,5 +1,6 @@
 package com.eibrahs.tinkerstranscend.tinker.modifiers;
 
+import com.eibrahs.tinkerstranscend.TTConfig;
 import com.eibrahs.tinkerstranscend.TinkersTranscend;
 import com.eibrahs.tinkerstranscend.client.particle.TinkersTranscendParticles;
 import com.eibrahs.tinkerstranscend.client.renderer.BlockOutlineRenderer;
@@ -69,6 +70,7 @@ public class VisionModifier extends Modifier implements
         });
     }
     private static final String modifierName = "vision";
+    private static final int RANGE_PRE_LEVEL = TTConfig.MODIFIER_VISION_RANGE.getAsInt();
     private final ResourceLocation KEY = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "scan_block");
 
     public int getPriority() {
@@ -139,7 +141,7 @@ public class VisionModifier extends Modifier implements
             if (persistentData.contains(KEY)) filter=persistentData.getString(KEY);
             TagKey<Block> ores = TagKey.create(Registries.BLOCK, ResourceLocation.parse(filter));
 
-            findOres(level, result.getBlockPos(), Math.min(2 + modifierEntry.getLevel(), 16),ores);
+            findOres(level, result.getBlockPos(), Math.min(2 + modifierEntry.getLevel()*RANGE_PRE_LEVEL, 16),ores);
         }
         return InteractionResult.SUCCESS;
     }
@@ -169,10 +171,7 @@ public class VisionModifier extends Modifier implements
                     BlockState state = level.getBlockState(scan);
                     if (state.is(filter)){
                         blocks.add(scan);
-                        //Vec3 particlePos = scan.getCenter();
-                        //int color = state.getMapColor(level,scan).col;
-                        //level.addParticle(ColorParticleOption.create(TinkersTranscendParticles.VISION_PARTICLE.get(),color),particlePos.x,particlePos.y,particlePos.z,0,0,0);
-                    }
+                     }
                 }
             }
         }

@@ -1,25 +1,21 @@
 
-Installation information
+计划表
 =======
-
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+```
+序号  优先度     难易度     内容
+3       低       中       新增两种材料的减伤特性
+4       低       中       共振器改成四部件
+5       低       高       共振器右键功能移植为强化
+6       低       中       新版重戟核心
+7       低       高       新的光环饰品工具类型
+8       低       低       自定义护盾颜色
+9       低       高       护盾着色器渲染
+```
+问题列表
+======
+```
+序号  优先度     难易度   内容
+2       低       -        匠魂(移植版)自定义材质无效 - 等待移植版作者修复
+3       中       中       多相可能忽略自定义槽位
+4       低       中       护盾在某些动作下与玩家模型有细微偏差
+```

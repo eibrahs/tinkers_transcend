@@ -12,18 +12,23 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.LayeredDraw;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.config.ModConfigEvent;
 
+@EventBusSubscriber(modid = TinkersTranscend.MODID, value = Dist.CLIENT)
 public class MagicShieldLayer implements LayeredDraw.Layer {
     private static final ResourceLocation SHIELD_FULL = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hud/magic_shield_full");
     private static final ResourceLocation SHIELD_HALF = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hud/magic_shield_half");
     private static final ResourceLocation SHIELD_EMPTY = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hud/magic_shield_empty");
-    private static final boolean heartStyle = TTConfig.MAGIC_SHIELD_STYLE.get();
+    private static int heartStyle = 0;
     private static final int ICON_SIZE = 9; // 图标尺寸，通常和心形图标一致
     private static final int ICON_SPACING = 8; // 图标间距
     private static final float SHIELD_PER_ICON = 2.0f;
     @Override
     public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
-        if (!heartStyle) return;
+        if (heartStyle==1) return;
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
         if (player == null || mc.options.hideGui || player.isSpectator() || player.isCreative()) return;
@@ -46,31 +51,36 @@ public class MagicShieldLayer implements LayeredDraw.Layer {
                 GlStateManager.DestFactor.ZERO
         );
         for (int i = 0; i < totalIcons; i++) {
-            int iconX = x + i * 8;   // 图标间距 8px
+            int iconX = x + i * 8;
 
-            // 这颗图标的两个半心槽位对应的护盾值
-            float leftSlot  = i * SHIELD_PER_ICON;         // 左半心起始值
-            float rightSlot = i * SHIELD_PER_ICON + 1.0f;  // 右半心起始值
+            float leftSlot  = i * SHIELD_PER_ICON;
+            float rightSlot = i * SHIELD_PER_ICON + 1.0f;
 
-            // 先画空底座
             guiGraphics.blitSprite(SHIELD_EMPTY, iconX, y, 9, 9);
 
             if (value >= rightSlot + 1.0f) {
-                // 左、右半心都有值 → full
                 guiGraphics.blitSprite(SHIELD_FULL, iconX, y, 9, 9);
             } else if (value >= rightSlot) {
-                // 只有左半心有值 → half
                 guiGraphics.blitSprite(SHIELD_HALF, iconX, y, 9, 9);
             }
-            // 否则什么都不画，就保留 EMPTY 底座
         }
-        if (shield.max()>20.0f) {
+        if (shield.max()>20.0f&&heartStyle==0) {
             guiGraphics.drawString(mc.font, String.format("%.0f/%.0f", shield.value(), shield.max()), x-30, y, 0x4988d7, true);
         }
 
-
         RenderSystem.defaultBlendFunc();
         RenderSystem.disableBlend();
-        //mc.gui.leftHeight += 9 + 1;
+    }
+    @SubscribeEvent
+    public static void onConfigLoading(ModConfigEvent.Loading event) {
+        if (event.getConfig().getSpec() == TTConfig.CLIENT_SPEC) {
+            heartStyle = TTConfig.MAGIC_SHIELD_STYLE.getAsInt();
+        }
+    }
+    @SubscribeEvent
+    public static void onConfigReloading(ModConfigEvent.Reloading event) {
+        if (event.getConfig().getSpec() == TTConfig.CLIENT_SPEC) {
+            heartStyle = TTConfig.MAGIC_SHIELD_STYLE.getAsInt();
+        }
     }
 }

@@ -312,5 +312,11 @@
   "modifier.tinkers_transcend.fox_soul.tooltip.magic_damage": "魔法伤害",
   "death.attack.fox_soul": "%1$s 的魂魄迷失了",
   "sound.tinkers_transcend.magic_shield_hurt": "护盾受击",
-  "sound.tinkers_transcend.magic_shield_break": "护盾破碎"
+  "sound.tinkers_transcend.magic_shield_break": "护盾破碎",
+
+  "tinkers_transcend.configuration.display": "显示",
+  "tinkers_transcend.configuration.magic_shield_style": "护盾UI风格",
+  "tinkers_transcend.configuration.magic_shield_fox_sound": "护盾狐狸音效",
+  "tinkers_transcend.configuration.magic_shield_color": "护盾颜色",
+  "tinkers_transcend.configuration.modifier": "强化"
 }

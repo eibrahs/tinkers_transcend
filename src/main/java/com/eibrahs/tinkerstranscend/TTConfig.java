@@ -55,16 +55,23 @@ public class TTConfig {
     public static final ModConfigSpec.DoubleValue MODIFIER_FOX_SOUL_MAGIC_DAMAGE = BUILDER
             .comment("狐魂 - 每级附加魔法伤害量")
             .defineInRange("modifier.fox_soul_magic_damage",1,0,Double.MAX_VALUE);
-    static final ModConfigSpec SPEC = BUILDER.build();
+
+    public static final ModConfigSpec.IntValue MODIFIER_VISION_RANGE = BUILDER
+            .comment("洞察 - 每级增加矿石探查半径(算法复杂度O(n^3)，不建议超过10以免影响性能)")
+            .defineInRange("modifier.vision_range_pre_level",1,1,256);
+    public static final ModConfigSpec SPEC = BUILDER.build();
 
 
     private static final ModConfigSpec.Builder CLIENT_BUILDER = new ModConfigSpec.Builder();
-    public static final ModConfigSpec.BooleanValue MAGIC_SHIELD_STYLE = CLIENT_BUILDER
-            .comment("魔法护盾显示风格，true:心型;false:条形")
-            .define("display.magic_shield_style",true);
+    public static final ModConfigSpec.IntValue MAGIC_SHIELD_STYLE = CLIENT_BUILDER
+            .comment("魔法护盾显示风格，0:心型;1:条形;2:都显示")
+            .defineInRange("display.magic_shield_style",0,0,2);
     public static final ModConfigSpec.BooleanValue MAGIC_SHIELD_FOX_SOUND = CLIENT_BUILDER
             .comment("是否开启魔法护盾狐狸音效，true:开启;false:关闭")
             .define("display.magic_shield_fox_sound",true);
-    static final ModConfigSpec CLIENT_SPEC = CLIENT_BUILDER.build();
+    public static final ModConfigSpec.ConfigValue<String> MAGIC_SHIELD_COLOR = CLIENT_BUILDER
+            .comment("魔法护盾颜色(十六进制ARGB)")
+            .define("display.magic_shield_color","5978bed7");
+    public static final ModConfigSpec CLIENT_SPEC = CLIENT_BUILDER.build();
 
 }
