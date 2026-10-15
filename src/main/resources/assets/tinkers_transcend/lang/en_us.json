@@ -215,11 +215,11 @@
   "material.tinkers_transcend.foxthread.ranged": "物品栏中没有箭时可以使用魔法箭",
   "material.tinkers_transcend.foxthread.armor": "为玩家提供魔法护盾",
 
-  "material.tinkers_transcend.awaken_fox_soul_steel": "觉醒狐魂钢",
-  "material.tinkers_transcend.awaken_fox_soul_steel.flavor": "觉醒狐魂钢描述(隐藏材料)",
-  "material.tinkers_transcend.awaken_fox_soul_steel.encyclopedia": "被狐魂祝福的强力工具",
-  "material.tinkers_transcend.awaken_fox_soul_steel.ranged": "被狐魂祝福的强力工具",
-  "material.tinkers_transcend.awaken_fox_soul_steel.armor": "被狐魂祝福的强力护甲",
+  "material.tinkers_transcend.awaken_fox_soul_steel": "狐神钢",
+  "material.tinkers_transcend.awaken_fox_soul_steel.flavor": "狐神钢描述(隐藏材料)",
+  "material.tinkers_transcend.awaken_fox_soul_steel.encyclopedia": "被狐神祝福的强力工具",
+  "material.tinkers_transcend.awaken_fox_soul_steel.ranged": "被狐神祝福的强力工具",
+  "material.tinkers_transcend.awaken_fox_soul_steel.armor": "被狐神祝福的强力护甲",
 
   "modifier.tinkers_transcend.mature": "老成",
   "modifier.tinkers_transcend.mature.flavor": "没有火，只有老。",
@@ -277,8 +277,8 @@
   "modifier.tinkers_transcend.merciless.tooltip.armor": "护甲值",
   "modifier.tinkers_transcend.merciless.tooltip.knockback_resistance": "击退抗性",
 
-  "modifier.tinkers_transcend.war_axe": "摧枯拉朽",
-  "modifier.tinkers_transcend.war_axe.flavor": "战斗爽",
+  "modifier.tinkers_transcend.war_axe": "崩山",
+  "modifier.tinkers_transcend.war_axe.flavor": "摧枯拉朽",
   "modifier.tinkers_transcend.war_axe.description": "战斧专用强化：更高的暴击伤害与横扫伤害、更远的攻击范围",
   "modifier.tinkers_transcend.war_axe.tooltip.critical_damage": "暴击伤害",
   "modifier.tinkers_transcend.war_axe.tooltip.sweep_damage": "横扫伤害比率",
@@ -293,7 +293,7 @@
   "modifier.tinkers_transcend.radiance.description": "使穿戴者免疫诅咒金的负面效果",
 
   "modifier.tinkers_transcend.carving": "剥取",
-  "modifier.tinkers_transcend.carving.flavor": "更多素材",
+  "modifier.tinkers_transcend.carving.flavor": "已发动技能“猫的解体术”",
   "modifier.tinkers_transcend.carving.description": "生物死亡时掉落更多毛皮和肉",
   "effect.tinkers_transcend.carved": "被剥取",
   "gui.tinkers_transcend.carving": "剥取",
@@ -314,6 +314,15 @@
   "death.attack.fox_soul": "%1$s 的魂魄迷失了",
   "sound.tinkers_transcend.magic_shield_hurt": "护盾：受击",
   "sound.tinkers_transcend.magic_shield_break": "护盾：破碎",
+
+  "modifier.tinkers_transcend.fox_protection": "狐佑",
+  "modifier.tinkers_transcend.fox_protection.flavor": "……所以，护甲越高，护甲越低",
+  "modifier.tinkers_transcend.fox_protection.description": "根据自身减少的生命值比率，消耗狐魂减免伤害，未减免的伤害转化为狐魂",
+  "modifier.tinkers_transcend.fox_protection.tooltip.text": "狐魂：",
+  "modifier.tinkers_transcend.fox_curse": "狐咒",
+  "modifier.tinkers_transcend.fox_curse.flavor": "……所以，伤害越高，伤害越低",
+  "modifier.tinkers_transcend.fox_curse.description": "根据削减目标生命值的比率，消耗狐咒增加伤害倍率，比率越低，伤害倍率越高，溢出的伤害转化为狐咒。",
+  "modifier.tinkers_transcend.fox_curse.tooltip.text": "狐咒：",
 
   "tinkers_transcend.configuration.display": "显示",
   "tinkers_transcend.configuration.magic_shield_style": "护盾UI风格",

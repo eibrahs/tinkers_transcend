@@ -29,8 +29,10 @@ public record MagicShield(float value, float max, float regeneration,long broken
         return new MagicShield(0f, 0, 0, 0).initConfig();
     }
     public MagicShield initConfig(){
-        REGEN_PER_LEVEL = (float)TTConfig.MODIFIER_FOX_SOUL_MAGIC_SHIELD_REGEN.getAsDouble();
-        MAX_PER_LEVEL = (float)TTConfig.MODIFIER_FOX_SOUL_MAGIC_SHIELD_MAX_VALUE.getAsDouble();
+        float regen_per_level = (float)TTConfig.MODIFIER_FOX_SOUL_MAGIC_SHIELD_REGEN.getAsDouble();
+        float max_per_level = (float)TTConfig.MODIFIER_FOX_SOUL_MAGIC_SHIELD_MAX_VALUE.getAsDouble();
+        REGEN_PER_LEVEL = Float.isNaN(regen_per_level)?0:regen_per_level;
+        MAX_PER_LEVEL = Float.isNaN(max_per_level)?0:max_per_level;
         return this;
     }
     public MagicShield takeDamage(float damage){

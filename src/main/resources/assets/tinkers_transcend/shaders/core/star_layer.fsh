@@ -1,3 +1,5 @@
+#version 150
+
 uniform sampler2D Sampler0;
 uniform sampler2D Sampler1;
 
@@ -43,8 +45,8 @@ vec3 StarLayer(vec2 uv){
             float n = Hash21(id+offs);
             float size = fract(n);
             float star = Star(gv-offs-vec2(n, fract(n*34.))+.5, smoothstep(.1,.9,size)*.46);
-            vec3 color = sin(vec3(.2,.3,.9)*fract(n*2345.2)*TAU)*.25+.75;
-            color = color*vec3(.9,.59,.9+size);
+            //vec3 color = sin(vec3(.2,.3,.9)*fract(n*2345.2)*TAU)*.25+.75;
+            vec3 color = vec3(BackgroundColor.r,BackgroundColor.g,BackgroundColor.b+size);
             star *= sin(iTime*.6+n*TAU)*.5+.5;
             col += star*size*color;
         }
@@ -54,12 +56,13 @@ vec3 StarLayer(vec2 uv){
 
 out vec4 fragColor;
 
-void mainImage( out vec4 fragColor, in vec2 fragCoord )
+void mainImage(vec2 fragCoord )
 {
     vec2 uv = (fragCoord-.5*iResolution.xy)/iResolution.y;
     vec2 M = vec2(0);
-    M -= vec2(M.x+sin(iTime*0.22), M.y-cos(iTime*0.22));
-    M +=(iMouse.xy-iResolution.xy*.5)/iResolution.y;
+    //M -= vec2(M.x+sin(iTime*0.22), M.y-cos(iTime*0.22));
+    M -= vec2(M.x+sin(iTime*0.44),M.y+iTime*0.88);
+    //M +=(iMouse.xy-iResolution.xy*.5)/iResolution.y;
     float t = iTime*Velocity;
     vec3 col = vec3(0);
     for(float i=0.; i<1.; i+=1./NUM_LAYERS){
@@ -67,10 +70,10 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         float scale = mix(CanvasView, .5, depth);
         float fade = depth*smoothstep(1.,.9,depth);
         col += StarLayer(uv*scale+i*453.2-iTime*.05+M)*fade;}
-    fragColor = vec4(col,0.35);
+    fragColor = vec4(col,col.r*0.5);
 }
 
 void main()
 {
-    mainImage(fragColor, gl_FragCoord.xy);
+    mainImage(gl_FragCoord.xy);
 }

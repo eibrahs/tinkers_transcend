@@ -9,9 +9,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.sound.PlaySoundEvent;
@@ -21,16 +23,16 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 @EventBusSubscriber(modid = TinkersTranscend.MODID)
 public class MagicShieldEvent {
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void onLivingDamagePre(LivingDamageEvent.Pre event) {
         LivingEntity entity = event.getEntity();
         if (entity.level().isClientSide()) return;
         if (!(entity.hasData(TinkersTranscendAttachments.MAGIC_SHIELD))) return;
         MagicShield shield = entity.getData(TinkersTranscendAttachments.MAGIC_SHIELD);
-        if (shield.value() <= 0) return;
+        if (shield.isBroken()) return;
 
         float damage = event.getNewDamage();
-        if (damage <= 0) return;
+        if (Float.isNaN(damage)||damage <= 0|| event.getSource().is(DamageTypes.GENERIC_KILL)) return;
 
         shield = shield.takeDamage(damage);
         if (shield.isBroken()) {

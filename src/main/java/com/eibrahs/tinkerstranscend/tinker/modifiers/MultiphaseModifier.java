@@ -89,9 +89,9 @@ public class MultiphaseModifier extends Modifier implements
     public static CompoundTag createEmptyTag(){
         CompoundTag upgradesTag = new CompoundTag();
         upgradesTag.put(NBT_NAME,new ListTag());
-        upgradesTag.putInt(SlotType.ABILITY.getName(),0);
-        upgradesTag.putInt(SlotType.UPGRADE.getName(),0);
-        upgradesTag.putInt(SlotType.DEFENSE.getName(),0);
+        for(SlotType slotType : SlotType.getAllSlotTypes()){
+            upgradesTag.putInt(slotType.getName(),0);
+        }
         return upgradesTag;
     }
     public static boolean isInitPhase(ItemStack itemStack){
@@ -105,9 +105,9 @@ public class MultiphaseModifier extends Modifier implements
         CompoundTag upgradesTag = new CompoundTag();
         ToolDataNBT persistentData = tool.getPersistentData();
         upgradesTag.put(NBT_NAME,tool.getUpgrades().serializeToNBT());
-        upgradesTag.putInt(SlotType.ABILITY.getName(),persistentData.getSlots(SlotType.ABILITY));
-        upgradesTag.putInt(SlotType.UPGRADE.getName(),persistentData.getSlots(SlotType.UPGRADE));
-        upgradesTag.putInt(SlotType.DEFENSE.getName(),persistentData.getSlots(SlotType.DEFENSE));
+        for(SlotType slotType : SlotType.getAllSlotTypes()){
+            upgradesTag.putInt(slotType.getName(),persistentData.getSlots(slotType));
+        }
         return upgradesTag;
     }
     public static void ApplyUpgradeTag(ItemStack itemStack,CompoundTag upgradeTag){
@@ -119,9 +119,9 @@ public class MultiphaseModifier extends Modifier implements
         CompoundTag tag = upgradeTag.copy();
         ToolDataNBT persistentData = tool.getPersistentData();
         tool.setUpgrades(ModifierNBT.readFromNBT(tag.getList(NBT_NAME,ListTag.TAG_COMPOUND)));
-        persistentData.setSlots(SlotType.ABILITY,tag.getInt(SlotType.ABILITY.getName()));
-        persistentData.setSlots(SlotType.UPGRADE,tag.getInt(SlotType.UPGRADE.getName()));
-        persistentData.setSlots(SlotType.DEFENSE,tag.getInt(SlotType.DEFENSE.getName()));
+        for(SlotType slotType : SlotType.getAllSlotTypes()){
+            persistentData.setSlots(slotType,tag.getInt(slotType.getName()));
+        }
     }
     public void addTooltip(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @Nullable Player player, @NotNull List<Component> tooltip, @NotNull TooltipKey tooltipKey, @NotNull TooltipFlag var6) {
         if (player != null) {

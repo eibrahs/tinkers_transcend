@@ -53,7 +53,7 @@ public class MagicShieldRendererEvent {
         if (player.isSleeping()) {
             poseStack.translate(0.0F, 1.6, 0.0F);
         }
-        float scale = 0.5f;
+        float scale = 0.6f;
         float alpha = 0.5f;
         Minecraft mc = Minecraft.getInstance();
         TinkersTranscendShaders.setMagicShieldShader(color,mc.getWindow().getWidth(),mc.getWindow().getHeight());

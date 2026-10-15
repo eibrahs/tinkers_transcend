@@ -47,6 +47,10 @@ public class TinkersTranscendModifiers {
             MODIFIERS.register("resent",ResentModifier::new);
     public static final StaticModifier<FoxSoulModifier> FOX_SOUL_MODIFIER =
             MODIFIERS.register("fox_soul",FoxSoulModifier::new);
+    public static final StaticModifier<FoxProtectionModifier> FOX_PROTECTION_MODIFIER =
+            MODIFIERS.register("fox_protection",FoxProtectionModifier::new);
+    public static final StaticModifier<FoxCurseModifier> FOX_CURSE_MODIFIER =
+            MODIFIERS.register("fox_curse",FoxCurseModifier::new);
     public static void register(IEventBus modEventBus) {
         MODIFIERS.register(modEventBus);
     }
@@ -59,10 +63,11 @@ public class TinkersTranscendModifiers {
         return ToolStack.copyFrom(item).getModifier(modifierId)!=ModifierEntry.EMPTY;
 
     }
-    public static boolean hasUpgrade(ItemStack item, ModifierId modifierId){
-        if (!ToolStack.isInitialized(item)) return false;
-        return ToolStack.copyFrom(item).getModifier(modifierId)!=ModifierEntry.EMPTY;
-
+    public static int getModifierLevel(ItemStack item,ModifierId modifierId){
+        if (!ToolStack.isInitialized(item)) return 0;
+        ToolStack tool = ToolStack.copyFrom(item);
+        if (tool.isBroken()) return 0;
+        return tool.getModifierLevel(modifierId);
     }
 }
 /*

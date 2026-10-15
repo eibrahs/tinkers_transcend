@@ -73,6 +73,7 @@ public class FoxSoulModifier extends Modifier implements
     }
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt)  {
+        if (tool.isBroken()) return;
         LivingEntity target = context.getLivingTarget();
         if (target==null) return;
         if (context.getCooldown()<0.5f) return;

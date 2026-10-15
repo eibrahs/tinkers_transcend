@@ -9,8 +9,8 @@
       "name": "tinkers_transcend:fox_soul"
     },
     {
-      "level": 2,
-      "name": "tconstruct:necrotic"
+      "level": 1,
+      "name": "tinkers_transcend:fox_curse"
     },
     {
       "level": 2,
@@ -29,7 +29,7 @@
       },
       {
         "level": 1,
-        "name": "tconstruct:necrotic"
+        "name": "tinkers_transcend:fox_curse"
       },
       {
         "level": 1,
@@ -47,7 +47,7 @@
       },
       {
         "level": 1,
-        "name": "tconstruct:magic_protection"
+        "name": "tinkers_transcend:fox_protection"
       },
       {
         "level": 1,
@@ -64,11 +64,11 @@
         "name": "tinkers_transcend:fox_soul"
       },
       {
-        "level": 2,
-        "name": "tconstruct:magic_protection"
+        "level": 1,
+        "name": "tinkers_transcend:fox_protection"
       },
       {
-        "level": 2,
+        "level": 1,
         "name": "tconstruct:knockback_resistance"
       }
     ],

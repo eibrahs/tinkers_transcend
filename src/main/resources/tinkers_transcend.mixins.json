@@ -11,12 +11,14 @@
     "ModifiableLauncherItemMixin",
     "BaseLaserBlockEntityMixin",
     "FoxPickupItemMixin",
-    "ToolStatsMixin",
+    "ToolStatsMixin"
+  ],
+  "client": [
+    "GameRendererMixin",
     "ItemRendererMixin",
     "HumanoidArmorLayerMixin",
     "MultilayerArmorModelMixin"
   ],
-  "client": [],
   "server": [],
   "compatibilityLevel": "JAVA_21",
   "injectors": {

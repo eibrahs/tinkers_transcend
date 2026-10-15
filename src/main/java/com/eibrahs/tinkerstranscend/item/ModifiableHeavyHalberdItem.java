@@ -73,7 +73,7 @@ public class ModifiableHeavyHalberdItem extends HeavyHalberdItem implements IMod
         this(properties, toolDefinition, 1);
     }
     public ModifiableHeavyHalberdItem(Item.Properties properties, ToolDefinition toolDefinition, int maxStackSize) {
-        super(TinkerTier.INSTANCE, properties.component(DataComponents.TOOL, createToolProperties(TinkerTier.INSTANCE)));
+        super(TinkerTier.INSTANCE, properties.component(DataComponents.TOOL, createToolProperties(0)));
         this.toolDefinition = toolDefinition;
         this.maxStackSize = maxStackSize;
     }

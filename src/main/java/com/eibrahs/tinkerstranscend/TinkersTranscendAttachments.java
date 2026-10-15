@@ -2,6 +2,7 @@ package com.eibrahs.tinkerstranscend;
 
 import com.eibrahs.tinkerstranscend.tinker.modifiers.handler.MagicShield;
 import com.mojang.serialization.Codec;
+import net.minecraft.network.codec.ByteBufCodecs;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -18,5 +19,12 @@ public class TinkersTranscendAttachments {
                     .sync(MagicShield.STREAM_CODEC)
                     .build()
     );
-
+    public static final Supplier<AttachmentType<Float>> FOX_SOUL_VALUE = ATTACHMENT_TYPES.register(
+            "fox_soul_value",
+            () -> AttachmentType.builder(()->0.0f)
+                    .serialize(Codec.FLOAT)
+                    .copyOnDeath()
+                    .sync(ByteBufCodecs.FLOAT)
+                    .build()
+    );
 }

@@ -18,6 +18,9 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.config.ModConfigEvent;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @EventBusSubscriber(modid = TinkersTranscend.MODID, value = Dist.CLIENT)
 public class MagicShieldBarLayer implements LayeredDraw.Layer {
     private static final ResourceLocation SHIELD_BAR = ResourceLocation.fromNamespaceAndPath(TinkersTranscend.MODID, "hud/magic_shield_bar");
@@ -28,7 +31,8 @@ public class MagicShieldBarLayer implements LayeredDraw.Layer {
     private static final int BAR_WEIGHT = (int) (219.0f * BAR_SCALE) ;
     private static final int BAR_HEIGHT = (int) (50.0f * BAR_SCALE);
     private static int heartStyle = 0;
-    private static float ratio = 1.0f;
+    private static Map<Integer,Float> ratios = new HashMap<>();
+
     @Override
     public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
         if (heartStyle==0) return;
@@ -39,9 +43,6 @@ public class MagicShieldBarLayer implements LayeredDraw.Layer {
         if (!(player.hasData(TinkersTranscendAttachments.MAGIC_SHIELD))) return;
         MagicShield shield = player.getData(TinkersTranscendAttachments.MAGIC_SHIELD);
         if (shield.isInvalid()) return;
-
-        float value = shield.value();
-        float max = shield.max();
 
         int x = guiGraphics.guiWidth() / 2 - 91 - (int)(48 * BAR_SCALE);
         int y = guiGraphics.guiHeight() - mc.gui.leftHeight-BAR_HEIGHT+(int)(2 * BAR_SCALE)+10;
@@ -55,22 +56,32 @@ public class MagicShieldBarLayer implements LayeredDraw.Layer {
 
         guiGraphics.blitSprite(SHIELD_BAR, x, y, BAR_WEIGHT, BAR_HEIGHT);
 
-        int barX = x+(int)(52 * BAR_SCALE),barY = y+(int) (24 * BAR_SCALE),barWidth = (int) (156 * BAR_SCALE),barHeight = (int) (17 * BAR_SCALE);
-        float newRatio = shield.max() > 0 ? shield.value() / shield.max() : 0;
-        ratio = Mth.lerp(0.2f,ratio,newRatio);
-        int fillWidth = (int) (barWidth * ratio);
-        if (fillWidth > 0) {
-            guiGraphics.blitSprite(SHIELD_BAR1,barWidth,barHeight,0,0,barX,barY,fillWidth,barHeight);
+        float value = shield.value();
+        float max = shield.max();
+        drawBar(guiGraphics,SHIELD_BAR1,x,y,52,24,156,17,value,max);
+        if (player.hasData(TinkersTranscendAttachments.FOX_SOUL_VALUE)) {
+            float soul = player.getData(TinkersTranscendAttachments.FOX_SOUL_VALUE);
+            drawBar(guiGraphics, SHIELD_BAR2, x, y, 76, 37, 121, 5, soul, 100.0f);
         }
 
         int hh = mc.font.lineHeight/2;
-         String text = String.format("%.1f/%.1f", shield.value(), shield.max());
+         String text = String.format("%.0f/%.0f", value, max);
         int hw = mc.font.width(text)/2;
         guiGraphics.drawString(mc.font,text , x+75-hw, y+17-hh, 0xFFFFFF, true);
 
         RenderSystem.defaultBlendFunc();
         RenderSystem.disableBlend();
         mc.gui.leftHeight += BAR_HEIGHT + 1;
+    }
+    private void drawBar(GuiGraphics guiGraphics,ResourceLocation sprite,int x,int y,int barOffsetX,int barOffsetY,int barW,int barH,float value,float maxValue){
+        int barX = x+(int)(barOffsetX * BAR_SCALE),barY = y+(int) (barOffsetY * BAR_SCALE),barWidth = (int) (barW * BAR_SCALE),barHeight = (int) (barH * BAR_SCALE);
+        float newRatio = maxValue > 0 ? value / maxValue : 0;
+        float ratio = Mth.lerp(0.2f,ratios.getOrDefault(sprite.hashCode(),1.0f),newRatio);
+        int fillWidth = (int) (barWidth * ratio);
+        ratios.put(sprite.hashCode(),ratio);
+        if (fillWidth > 0) {
+            guiGraphics.blitSprite(sprite,barWidth,barHeight,0,0,barX,barY,fillWidth,barHeight);
+        }
     }
     @SubscribeEvent
     public static void onConfigLoading(ModConfigEvent.Loading event) {
